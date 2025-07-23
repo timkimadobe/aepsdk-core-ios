@@ -15,6 +15,7 @@ name: Build and Test (Core)
 on:
   pull_request:
 
+    
 env:
   IOS_DEVICE_NAMES: '["iPhone 15"]'
   IOS_VERSIONS: '["18.1"]'
