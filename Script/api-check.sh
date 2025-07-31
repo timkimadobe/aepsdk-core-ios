@@ -4,6 +4,7 @@
 # chmod u+x api-check.sh
 
 set -e
+set -o pipefail
 
 IOS_TRIPLE="arm64-apple-ios12.0"
 TVOS_TRIPLE="arm64-apple-tvos12.0"
@@ -32,9 +33,15 @@ build_and_dump() {
 
     SDK_PATH=$(xcrun --sdk "$SDK" --show-sdk-path)
     
-    # Build in release mode as debug mode dumps non public APIs.
-    if ! swift build -c release --sdk "$SDK_PATH" --triple "$TRIPLE" -Xswiftc -enable-library-evolution > /dev/null 2>&1; then
-        echo "Build failed."
+    # Build in release mode as debug mode dumps non-public APIs.
+    # Temporarily disable errexit to capture and display the error message (if any)
+    set +e
+    build_output=$(swift build -c release --sdk "$SDK_PATH" --triple "$TRIPLE" -Xswiftc -enable-library-evolution 2>&1)
+    build_status=$?
+    set -e
+    if [[ $build_status -ne 0 ]]; then
+        echo "Error in [$module][$platform]: Swift build failed"
+        echo "$build_output"
         exit 1
     fi
         
@@ -57,8 +64,17 @@ run_api_digester() {
 
     output_file=$(mktemp)
 
-    swift api-digester -sdk "$SDK_PATH" -target "$TRIPLE" -swift-version 5 -diagnose-sdk -print-module \
-         --input-paths "$api_file" --input-paths "$sdk_file" $flag -o "$output_file"
+    # Temporarily disable errexit to capture and display the error message (if any)
+    set +e
+    digester_output=$(swift api-digester -sdk "$SDK_PATH" -target "$TRIPLE" -swift-version 5 -diagnose-sdk -print-module \
+         --input-paths "$api_file" --input-paths "$sdk_file" $flag -o "$output_file" 2>&1)
+    digester_status=$?
+    set -e
+    if [[ $digester_status -ne 0 ]]; then
+        echo "Error in [$module][$platform]: api-digester failed"
+        echo "$digester_output"
+        exit 1
+    fi
 
     output=$(sed '/^\s*$/d; /^\/\*/d' "$output_file")
     if [[ -n "$output" ]]; then
