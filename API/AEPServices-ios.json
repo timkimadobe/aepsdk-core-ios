@@ -41,6 +41,13 @@
       },
       {
         "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "AEPServices"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -835,7 +842,11 @@
                 "mangledName": "$s11AEPServices15ServiceProviderC02uiB0AA9UIService_pvM",
                 "moduleName": "AEPServices",
                 "implicit": true,
+                "intro_iOS": "13.0",
+                "intro_tvOS": "13.0",
                 "declAttributes": [
+                  "Available",
+                  "Available",
                   "Available",
                   "Available"
                 ],
@@ -11276,66 +11287,6 @@
           },
           {
             "kind": "Var",
-            "name": "width",
-            "printedName": "width",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Int?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11AEPServices15MessageSettingsC5widthSiSgvp",
-            "mangledName": "$s11AEPServices15MessageSettingsC5widthSiSgvp",
-            "moduleName": "AEPServices",
-            "declAttributes": [
-              "HasInitialValue",
-              "SetterAccess",
-              "HasStorage"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.Int?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11AEPServices15MessageSettingsC5widthSiSgvg",
-                "mangledName": "$s11AEPServices15MessageSettingsC5widthSiSgvg",
-                "moduleName": "AEPServices",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "maxWidth",
             "printedName": "maxWidth",
             "children": [
@@ -11388,6 +11339,66 @@
                 "declKind": "Accessor",
                 "usr": "s:11AEPServices15MessageSettingsC8maxWidthSiSgvg",
                 "mangledName": "$s11AEPServices15MessageSettingsC8maxWidthSiSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "width",
+            "printedName": "width",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC5widthSiSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC5widthSiSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC5widthSiSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC5widthSiSgvg",
                 "moduleName": "AEPServices",
                 "implicit": true,
                 "accessorKind": "get"
@@ -13468,6 +13479,7 @@
         "objc_name": "AEPFloatingButton",
         "declAttributes": [
           "Available",
+          "Available",
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
@@ -13901,6 +13913,7 @@
         "objc_name": "AEPFloatingButtonPosition",
         "declAttributes": [
           "ObjC",
+          "Available",
           "Available"
         ],
         "enumRawTypeName": "Int",
@@ -14031,6 +14044,7 @@
         "sugared_genericSig": "<Self : AEPServices.Dismissible, Self : AEPServices.Showable>",
         "objc_name": "AEPFloatingButtonPresentable",
         "declAttributes": [
+          "Available",
           "Available",
           "ObjC"
         ],
@@ -14914,6 +14928,489 @@
         "objc_name": "AEPFullscreenMessageDelegate",
         "declAttributes": [
           "ObjC",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FullscreenMessageNative",
+        "printedName": "FullscreenMessageNative",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "settings",
+            "printedName": "settings",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageSettings?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageSettings",
+                    "printedName": "AEPServices.MessageSettings",
+                    "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(py)settings",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "ObjC",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageSettings?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageSettings",
+                        "printedName": "AEPServices.MessageSettings",
+                        "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)settings",
+                "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageSettings?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageSettings",
+                        "printedName": "AEPServices.MessageSettings",
+                        "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)setSettings:",
+                "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvs",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvM",
+                "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvM",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "intro_iOS": "13.0",
+                "intro_tvOS": "13.0",
+                "declAttributes": [
+                  "Available",
+                  "Available",
+                  "Available",
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hide",
+            "printedName": "hide()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices23FullscreenMessageNativeC4hideyyF",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC4hideyyF",
+            "moduleName": "AEPServices",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "show",
+            "printedName": "show()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)show",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC4showyyF",
+            "moduleName": "AEPServices",
+            "objc_name": "show",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "show",
+            "printedName": "show(withMessagingDelegateControl:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices23FullscreenMessageNativeC4show28withMessagingDelegateControlySb_tF",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC4show28withMessagingDelegateControlySb_tF",
+            "moduleName": "AEPServices",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismiss",
+            "printedName": "dismiss()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)dismiss",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC7dismissyyF",
+            "moduleName": "AEPServices",
+            "objc_name": "dismiss",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)init",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeCACycfc",
+            "moduleName": "AEPServices",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative",
+        "mangledName": "$s11AEPServices23FullscreenMessageNativeC",
+        "moduleName": "AEPServices",
+        "intro_iOS": "13.0",
+        "intro_tvOS": "13.0",
+        "objc_name": "AEPFullscreenMessageNative",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "FullscreenPresentable",
+            "printedName": "FullscreenPresentable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenPresentable",
+            "mangledName": "$s11AEPServices21FullscreenPresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Showable",
+            "printedName": "Showable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPShowable",
+            "mangledName": "$s11AEPServices8ShowableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Dismissible",
+            "printedName": "Dismissible",
+            "usr": "c:@M@AEPServices@objc(pl)AEPDismissible",
+            "mangledName": "$s11AEPServices11DismissibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FullscreenMessageNativeDelegate",
+        "printedName": "FullscreenMessageNativeDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onShow",
+            "printedName": "onShow(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate(im)onShowFullscreenMessageNative:",
+            "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP6onShow7messageyAA0bcD0C_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FullscreenMessageNativeDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FullscreenMessageNativeDelegate>",
+            "protocolReq": true,
+            "objc_name": "onShowFullscreenMessageNative:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onDismiss",
+            "printedName": "onDismiss(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate(im)onDismissFullscreenMessageNative:",
+            "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP9onDismiss7messageyAA0bcD0C_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FullscreenMessageNativeDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FullscreenMessageNativeDelegate>",
+            "protocolReq": true,
+            "objc_name": "onDismissFullscreenMessageNative:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onError",
+            "printedName": "onError(message:error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PresentationError",
+                "printedName": "AEPServices.PresentationError",
+                "usr": "c:@M@AEPServices@objc(cs)AEPPresentationError"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate(im)onErrorFullscreenMessageNative:error:",
+            "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP7onError7message5erroryAA0bcD0C_AA012PresentationG0CtF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FullscreenMessageNativeDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FullscreenMessageNativeDelegate>",
+            "protocolReq": true,
+            "objc_name": "onErrorFullscreenMessageNative:error:",
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate",
+        "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "intro_iOS": "13.0",
+        "intro_tvOS": "13.0",
+        "objc_name": "AEPFullscreenMessageNativeDelegate",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "ObjC",
+          "Available",
           "Available"
         ],
         "conformances": [
