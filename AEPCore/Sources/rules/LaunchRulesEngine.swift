@@ -440,7 +440,6 @@ public class LaunchRulesEngine {
                 // identify it properly
                 let consequenceEvent = generateConsequenceEvent(consequence: consequence, parentEvent: processedEvent)
                 self.extensionRuntime.dispatch(event: consequenceEvent)
-
             } else {
                 Log.warning(label: LOG_TAG, "\(logPrefix) - Failed to record event in history for '\(operation)'")
             }

@@ -12,7 +12,7 @@
 
 import Foundation
 import UIKit
-#if os(tvOS)
+#if os(tvOS) && canImport(SwiftUI)
 import SwiftUI
 #endif
 
@@ -54,7 +54,7 @@ public protocol UIService {
     @objc
     func createFloatingButton(listener: FloatingButtonDelegate) -> FloatingButtonPresentable
 }
-#elseif os(tvOS)
+#elseif os(tvOS) && canImport(SwiftUI)
 @available(tvOS 13.0, *)
 @available(tvOSApplicationExtension, unavailable)
 public protocol UIService {

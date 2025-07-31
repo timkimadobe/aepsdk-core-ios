@@ -10,6 +10,7 @@
  governing permissions and limitations under the License.
  */
 
+#if canImport(SwiftUI)
 import Foundation
 
 /// Fullscreen message lifecycle event listener for native implementation
@@ -17,6 +18,7 @@ import Foundation
 @available(tvOSApplicationExtension, unavailable)
 @objc(AEPFullscreenMessageNativeDelegate)
 @available(tvOS 13.0, *)
+@available(iOS 13.0, *)
 public protocol FullscreenMessageNativeDelegate {
     /// Invoked when the fullscreen message is displayed
     /// - Parameters:
@@ -37,3 +39,4 @@ public protocol FullscreenMessageNativeDelegate {
     @objc(onErrorFullscreenMessageNative:error:)
     optional func onError(message: FullscreenMessageNative, error: PresentationError)
 }
+#endif

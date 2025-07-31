@@ -89,8 +89,12 @@ class ServiceProviderTests: XCTestCase {
     #if os(iOS)
         func testOverridingAppOnlyServices() {
             let mockUIService = MockUIService()
-            ServiceProvider.shared.uiService = mockUIService
-            XCTAssertEqual(Unmanaged.passUnretained(mockUIService).toOpaque(), Unmanaged.passUnretained(ServiceProvider.shared.uiService as! MockUIService).toOpaque())
+            if #available(iOS 13.0, *) {
+                ServiceProvider.shared.uiService = mockUIService
+            }
+            if #available(iOS 13.0, *) {
+                XCTAssertEqual(Unmanaged.passUnretained(mockUIService).toOpaque(), Unmanaged.passUnretained(ServiceProvider.shared.uiService as! MockUIService).toOpaque())
+            }
         
             let mockURLService = MockURLService()
             ServiceProvider.shared.urlService = mockURLService
@@ -99,13 +103,21 @@ class ServiceProviderTests: XCTestCase {
         }
         func testResettingAppOnlyServices() {
             let mockUIService = MockUIService()
-            ServiceProvider.shared.uiService = mockUIService
-            ServiceProvider.shared.resetAppOnlyServices()
-            XCTAssertTrue(ServiceProvider.shared.uiService is AEPUIService)
+            if #available(iOS 13.0, *) {
+                ServiceProvider.shared.uiService = mockUIService
+            }
+            if #available(iOS 13.0, *) {
+                ServiceProvider.shared.resetAppOnlyServices()
+            }
+            if #available(iOS 13.0, *) {
+                XCTAssertTrue(ServiceProvider.shared.uiService is AEPUIService)
+            }
         
             let mockURLService = MockURLService()
             ServiceProvider.shared.urlService = mockURLService
-            ServiceProvider.shared.resetAppOnlyServices()
+            if #available(iOS 13.0, *) {
+                ServiceProvider.shared.resetAppOnlyServices()
+            }
             XCTAssertTrue(ServiceProvider.shared.urlService is URLService)
         }
     #endif

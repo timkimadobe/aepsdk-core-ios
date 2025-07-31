@@ -15,7 +15,7 @@ import Foundation
 import UIKit
 #if os(iOS)
 import WebKit
-#elseif os(tvOS)
+#elseif os(tvOS) && canImport(SwiftUI)
 import SwiftUI
 #endif
 
@@ -37,7 +37,7 @@ class AEPUIService: UIService {
         return FloatingButton(listener: listener)
     }
 }
-#elseif os(tvOS)
+#elseif os(tvOS) && canImport(SwiftUI)
 @available(tvOS 13.0, *)
 @available(tvOSApplicationExtension, unavailable)
 class AEPUIService: UIService {

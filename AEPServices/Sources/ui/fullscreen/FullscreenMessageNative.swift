@@ -10,6 +10,7 @@
  governing permissions and limitations under the License.
  */
 
+#if canImport(SwiftUI)
 import Foundation
 import SwiftUI
 
@@ -152,3 +153,4 @@ public class FullscreenMessageNative: NSObject, FullscreenPresentable {
         return CGRect(x: 0, y: -screenHeight, width: screenWidth, height: screenHeight)
     }
 }
+#endif

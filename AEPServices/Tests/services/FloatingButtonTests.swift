@@ -26,7 +26,9 @@
         override func setUp() {
             mockListener = MockListener()
             mockUIService = MockUIService()
-            ServiceProvider.shared.uiService = mockUIService!
+            if #available(iOS 13.0, *) {
+                ServiceProvider.shared.uiService = mockUIService!
+            }
         }
 
         func test_init_whenListenerIsNil() {
