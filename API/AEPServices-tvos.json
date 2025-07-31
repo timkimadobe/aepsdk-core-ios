@@ -34,6 +34,13 @@
       },
       {
         "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "AEPServices"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -126,6 +133,108 @@
                   "Final"
                 ],
                 "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "messagingDelegate",
+            "printedName": "messagingDelegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "(any AEPServices.MessagingDelegate)?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvp",
+            "mangledName": "$s11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "ReferenceOwnership",
+              "HasStorage"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any AEPServices.MessagingDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessagingDelegate",
+                        "printedName": "any AEPServices.MessagingDelegate",
+                        "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvg",
+                "mangledName": "$s11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any AEPServices.MessagingDelegate)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessagingDelegate",
+                        "printedName": "any AEPServices.MessagingDelegate",
+                        "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvs",
+                "mangledName": "$s11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvs",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvM",
+                "mangledName": "$s11AEPServices15ServiceProviderC17messagingDelegateAA09MessagingE0_pSgvM",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "_modify"
               }
             ]
           },
@@ -634,6 +743,96 @@
                 "moduleName": "AEPServices",
                 "implicit": true,
                 "declAttributes": [
+                  "Available",
+                  "Available"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "uiService",
+            "printedName": "uiService",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIService",
+                "printedName": "any AEPServices.UIService",
+                "usr": "s:11AEPServices9UIServiceP"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15ServiceProviderC02uiB0AA9UIService_pvp",
+            "mangledName": "$s11AEPServices15ServiceProviderC02uiB0AA9UIService_pvp",
+            "moduleName": "AEPServices",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIService",
+                    "printedName": "any AEPServices.UIService",
+                    "usr": "s:11AEPServices9UIServiceP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15ServiceProviderC02uiB0AA9UIService_pvg",
+                "mangledName": "$s11AEPServices15ServiceProviderC02uiB0AA9UIService_pvg",
+                "moduleName": "AEPServices",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIService",
+                    "printedName": "any AEPServices.UIService",
+                    "usr": "s:11AEPServices9UIServiceP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15ServiceProviderC02uiB0AA9UIService_pvs",
+                "mangledName": "$s11AEPServices15ServiceProviderC02uiB0AA9UIService_pvs",
+                "moduleName": "AEPServices",
+                "isFromExtension": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15ServiceProviderC02uiB0AA9UIService_pvM",
+                "mangledName": "$s11AEPServices15ServiceProviderC02uiB0AA9UIService_pvM",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "intro_iOS": "13.0",
+                "intro_tvOS": "13.0",
+                "declAttributes": [
+                  "Available",
+                  "Available",
                   "Available",
                   "Available"
                 ],
@@ -9749,6 +9948,2503 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "Dismissible",
+        "printedName": "Dismissible",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "dismiss",
+            "printedName": "dismiss()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPDismissible(im)dismiss",
+            "mangledName": "$s11AEPServices11DismissibleP7dismissyyF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.Dismissible>",
+            "sugared_genericSig": "<Self where Self : AEPServices.Dismissible>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPDismissible",
+        "mangledName": "$s11AEPServices11DismissibleP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "objc_name": "AEPDismissible",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MessageAlignment",
+        "printedName": "MessageAlignment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "center",
+            "printedName": "center",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAlignment.Type) -> AEPServices.MessageAlignment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAlignment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAlignment@AEPMessageAlignmentCenter",
+            "mangledName": "$s11AEPServices16MessageAlignmentO6centeryA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "left",
+            "printedName": "left",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAlignment.Type) -> AEPServices.MessageAlignment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAlignment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAlignment@AEPMessageAlignmentLeft",
+            "mangledName": "$s11AEPServices16MessageAlignmentO4leftyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "right",
+            "printedName": "right",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAlignment.Type) -> AEPServices.MessageAlignment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAlignment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAlignment@AEPMessageAlignmentRight",
+            "mangledName": "$s11AEPServices16MessageAlignmentO5rightyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "top",
+            "printedName": "top",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAlignment.Type) -> AEPServices.MessageAlignment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAlignment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAlignment@AEPMessageAlignmentTop",
+            "mangledName": "$s11AEPServices16MessageAlignmentO3topyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "bottom",
+            "printedName": "bottom",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAlignment.Type) -> AEPServices.MessageAlignment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAlignment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAlignment@AEPMessageAlignmentBottom",
+            "mangledName": "$s11AEPServices16MessageAlignmentO6bottomyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Function",
+            "name": "fromString",
+            "printedName": "fromString(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageAlignment",
+                "printedName": "AEPServices.MessageAlignment",
+                "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices16MessageAlignmentO10fromStringyACSSFZ",
+            "mangledName": "$s11AEPServices16MessageAlignmentO10fromStringyACSSFZ",
+            "moduleName": "AEPServices",
+            "static": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAlignment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11AEPServices16MessageAlignmentO8rawValueACSgSi_tcfc",
+            "mangledName": "$s11AEPServices16MessageAlignmentO8rawValueACSgSi_tcfc",
+            "moduleName": "AEPServices",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices16MessageAlignmentO8rawValueSivp",
+            "mangledName": "$s11AEPServices16MessageAlignmentO8rawValueSivp",
+            "moduleName": "AEPServices",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices16MessageAlignmentO8rawValueSivg",
+                "mangledName": "$s11AEPServices16MessageAlignmentO8rawValueSivg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AEPServices@E@AEPMessageAlignment",
+        "mangledName": "$s11AEPServices16MessageAlignmentO",
+        "moduleName": "AEPServices",
+        "objc_name": "AEPMessageAlignment",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MessageAnimation",
+        "printedName": "MessageAnimation",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "none",
+            "printedName": "none",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationNone",
+            "mangledName": "$s11AEPServices16MessageAnimationO4noneyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "left",
+            "printedName": "left",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationLeft",
+            "mangledName": "$s11AEPServices16MessageAnimationO4leftyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "right",
+            "printedName": "right",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationRight",
+            "mangledName": "$s11AEPServices16MessageAnimationO5rightyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "top",
+            "printedName": "top",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationTop",
+            "mangledName": "$s11AEPServices16MessageAnimationO3topyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "bottom",
+            "printedName": "bottom",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationBottom",
+            "mangledName": "$s11AEPServices16MessageAnimationO6bottomyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Var",
+            "name": "center",
+            "printedName": "center",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationCenter",
+            "mangledName": "$s11AEPServices16MessageAnimationO6centeryA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 5
+          },
+          {
+            "kind": "Var",
+            "name": "fade",
+            "printedName": "fade",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.MessageAnimation.Type) -> AEPServices.MessageAnimation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.MessageAnimation.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPMessageAnimation@AEPMessageAnimationFade",
+            "mangledName": "$s11AEPServices16MessageAnimationO4fadeyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 6
+          },
+          {
+            "kind": "Function",
+            "name": "fromString",
+            "printedName": "fromString(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageAnimation",
+                "printedName": "AEPServices.MessageAnimation",
+                "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices16MessageAnimationO10fromStringyACSSFZ",
+            "mangledName": "$s11AEPServices16MessageAnimationO10fromStringyACSSFZ",
+            "moduleName": "AEPServices",
+            "static": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAnimation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11AEPServices16MessageAnimationO8rawValueACSgSi_tcfc",
+            "mangledName": "$s11AEPServices16MessageAnimationO8rawValueACSgSi_tcfc",
+            "moduleName": "AEPServices",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices16MessageAnimationO8rawValueSivp",
+            "mangledName": "$s11AEPServices16MessageAnimationO8rawValueSivp",
+            "moduleName": "AEPServices",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices16MessageAnimationO8rawValueSivg",
+                "mangledName": "$s11AEPServices16MessageAnimationO8rawValueSivg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AEPServices@E@AEPMessageAnimation",
+        "mangledName": "$s11AEPServices16MessageAnimationO",
+        "moduleName": "AEPServices",
+        "objc_name": "AEPMessageAnimation",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MessageSettings",
+        "printedName": "MessageSettings",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "parent",
+            "printedName": "parent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings(py)parent",
+            "mangledName": "$s11AEPServices15MessageSettingsC6parentypSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Any?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings(im)parent",
+                "mangledName": "$s11AEPServices15MessageSettingsC6parentypSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maxWidth",
+            "printedName": "maxWidth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC8maxWidthSiSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC8maxWidthSiSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC8maxWidthSiSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC8maxWidthSiSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "width",
+            "printedName": "width",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC5widthSiSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC5widthSiSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC5widthSiSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC5widthSiSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "height",
+            "printedName": "height",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC6heightSiSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC6heightSiSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC6heightSiSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC6heightSiSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "verticalAlign",
+            "printedName": "verticalAlign",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAlignment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC13verticalAlignAA0B9AlignmentOSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC13verticalAlignAA0B9AlignmentOSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageAlignment?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC13verticalAlignAA0B9AlignmentOSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC13verticalAlignAA0B9AlignmentOSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "verticalInset",
+            "printedName": "verticalInset",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC13verticalInsetSiSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC13verticalInsetSiSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC13verticalInsetSiSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC13verticalInsetSiSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "horizontalAlign",
+            "printedName": "horizontalAlign",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAlignment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC15horizontalAlignAA0B9AlignmentOSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC15horizontalAlignAA0B9AlignmentOSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageAlignment?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAlignment",
+                        "printedName": "AEPServices.MessageAlignment",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC15horizontalAlignAA0B9AlignmentOSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC15horizontalAlignAA0B9AlignmentOSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "horizontalInset",
+            "printedName": "horizontalInset",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC15horizontalInsetSiSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC15horizontalInsetSiSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC15horizontalInsetSiSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC15horizontalInsetSiSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "uiTakeover",
+            "printedName": "uiTakeover",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC10uiTakeoverSbSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC10uiTakeoverSbSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC10uiTakeoverSbSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC10uiTakeoverSbSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fitToContent",
+            "printedName": "fitToContent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC12fitToContentSbSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC12fitToContentSbSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC12fitToContentSbSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC12fitToContentSbSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cornerRadius",
+            "printedName": "cornerRadius",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC12cornerRadius14CoreFoundation7CGFloatVSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC12cornerRadius12CoreGraphics7CGFloatVSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "CoreGraphics.CGFloat?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CGFloat",
+                        "printedName": "CoreGraphics.CGFloat",
+                        "usr": "s:14CoreFoundation7CGFloatV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC12cornerRadius14CoreFoundation7CGFloatVSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC12cornerRadius12CoreGraphics7CGFloatVSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dismissAnimation",
+            "printedName": "dismissAnimation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAnimation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC16dismissAnimationAA0bE0OSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC16dismissAnimationAA0bE0OSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageAnimation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC16dismissAnimationAA0bE0OSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC16dismissAnimationAA0bE0OSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "displayAnimation",
+            "printedName": "displayAnimation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAnimation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices15MessageSettingsC16displayAnimationAA0bE0OSgvp",
+            "mangledName": "$s11AEPServices15MessageSettingsC16displayAnimationAA0bE0OSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "SetterAccess",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageAnimation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageAnimation",
+                        "printedName": "AEPServices.MessageAnimation",
+                        "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices15MessageSettingsC16displayAnimationAA0bE0OSgvg",
+                "mangledName": "$s11AEPServices15MessageSettingsC16displayAnimationAA0bE0OSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(parent:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings(im)initWithParent:",
+            "mangledName": "$s11AEPServices15MessageSettingsC6parentACypSg_tcfc",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "getBackgroundColor",
+            "printedName": "getBackgroundColor(opacity:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC18getBackgroundColor7opacitySo7UIColorC14CoreFoundation7CGFloatVSg_tF",
+            "mangledName": "$s11AEPServices15MessageSettingsC18getBackgroundColor7opacitySo7UIColorC12CoreGraphics7CGFloatVSg_tF",
+            "moduleName": "AEPServices",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setWidth",
+            "printedName": "setWidth(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC8setWidthyACSiSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC8setWidthyACSiSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setMaxWidth",
+            "printedName": "setMaxWidth(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC11setMaxWidthyACSiSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC11setMaxWidthyACSiSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setHeight",
+            "printedName": "setHeight(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC9setHeightyACSiSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC9setHeightyACSiSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setVerticalAlign",
+            "printedName": "setVerticalAlign(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAlignment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC16setVerticalAlignyAcA0B9AlignmentOSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC16setVerticalAlignyAcA0B9AlignmentOSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setHorizontalAlign",
+            "printedName": "setHorizontalAlign(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAlignment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAlignment",
+                    "printedName": "AEPServices.MessageAlignment",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAlignment"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC18setHorizontalAlignyAcA0B9AlignmentOSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC18setHorizontalAlignyAcA0B9AlignmentOSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setVerticalInset",
+            "printedName": "setVerticalInset(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC16setVerticalInsetyACSiSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC16setVerticalInsetyACSiSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setHorizontalInset",
+            "printedName": "setHorizontalInset(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC18setHorizontalInsetyACSiSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC18setHorizontalInsetyACSiSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUiTakeover",
+            "printedName": "setUiTakeover(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC13setUiTakeoveryACSbSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC13setUiTakeoveryACSbSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setFitToContent",
+            "printedName": "setFitToContent(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC15setFitToContentyACSbSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC15setFitToContentyACSbSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setBackdropColor",
+            "printedName": "setBackdropColor(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings(im)setBackdropColor:",
+            "mangledName": "$s11AEPServices15MessageSettingsC16setBackdropColoryACSSSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setBackdropOpacity",
+            "printedName": "setBackdropOpacity(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC18setBackdropOpacityyAC14CoreFoundation7CGFloatVSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC18setBackdropOpacityyAC12CoreGraphics7CGFloatVSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setCornerRadius",
+            "printedName": "setCornerRadius(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC15setCornerRadiusyAC14CoreFoundation7CGFloatVSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC15setCornerRadiusyAC12CoreGraphics7CGFloatVSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDisplayAnimation",
+            "printedName": "setDisplayAnimation(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAnimation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC19setDisplayAnimationyAcA0bF0OSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC19setDisplayAnimationyAcA0bF0OSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDismissAnimation",
+            "printedName": "setDismissAnimation(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageAnimation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageAnimation",
+                    "printedName": "AEPServices.MessageAnimation",
+                    "usr": "c:@M@AEPServices@E@AEPMessageAnimation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices15MessageSettingsC19setDismissAnimationyAcA0bF0OSgF",
+            "mangledName": "$s11AEPServices15MessageSettingsC19setDismissAnimationyAcA0bF0OSgF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MessageSettings",
+                "printedName": "AEPServices.MessageSettings",
+                "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings(im)init",
+            "mangledName": "$s11AEPServices15MessageSettingsCACycfc",
+            "moduleName": "AEPServices",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings",
+        "mangledName": "$s11AEPServices15MessageSettingsC",
+        "moduleName": "AEPServices",
+        "objc_name": "AEPMessageSettings",
+        "declAttributes": [
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MessagingDelegate",
+        "printedName": "MessagingDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onShow",
+            "printedName": "onShow(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Showable",
+                "printedName": "any AEPServices.Showable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPShowable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate(im)onShow:",
+            "mangledName": "$s11AEPServices17MessagingDelegateP6onShow7messageyAA8Showable_p_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.MessagingDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.MessagingDelegate>",
+            "protocolReq": true,
+            "objc_name": "onShow:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onDismiss",
+            "printedName": "onDismiss(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Showable",
+                "printedName": "any AEPServices.Showable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPShowable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate(im)onDismiss:",
+            "mangledName": "$s11AEPServices17MessagingDelegateP9onDismiss7messageyAA8Showable_p_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.MessagingDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.MessagingDelegate>",
+            "protocolReq": true,
+            "objc_name": "onDismiss:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldShowMessage",
+            "printedName": "shouldShowMessage(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Showable",
+                "printedName": "any AEPServices.Showable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPShowable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate(im)shouldShowMessage:",
+            "mangledName": "$s11AEPServices17MessagingDelegateP17shouldShowMessage7messageSbAA8Showable_p_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.MessagingDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.MessagingDelegate>",
+            "protocolReq": true,
+            "objc_name": "shouldShowMessage:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "urlLoaded",
+            "printedName": "urlLoaded(_:byMessage:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Showable",
+                "printedName": "any AEPServices.Showable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPShowable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate(im)urlLoaded:byMessage:",
+            "mangledName": "$s11AEPServices17MessagingDelegateP9urlLoaded_9byMessagey10Foundation3URLV_AA8Showable_ptF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.MessagingDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.MessagingDelegate>",
+            "protocolReq": true,
+            "objc_name": "urlLoaded:byMessage:",
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPMessagingDelegate",
+        "mangledName": "$s11AEPServices17MessagingDelegateP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "objc_name": "AEPMessagingDelegate",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "PresentationError",
         "printedName": "PresentationError",
         "children": [
@@ -9874,6 +12570,1484 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Showable",
+        "printedName": "Showable",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "show",
+            "printedName": "show()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPShowable(im)show",
+            "mangledName": "$s11AEPServices8ShowableP4showyyF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.Showable>",
+            "sugared_genericSig": "<Self where Self : AEPServices.Showable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPShowable",
+        "mangledName": "$s11AEPServices8ShowableP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "objc_name": "AEPShowable",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UIService",
+        "printedName": "UIService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "createFullscreenMessage",
+            "printedName": "createFullscreenMessage(payload:listener:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenPresentable",
+                "printedName": "any AEPServices.FullscreenPresentable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenPresentable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "View",
+                "printedName": "any SwiftUI.View",
+                "usr": "s:7SwiftUI4ViewP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any AEPServices.FullscreenMessageNativeDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FullscreenMessageNativeDelegate",
+                    "printedName": "any AEPServices.FullscreenMessageNativeDelegate",
+                    "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices9UIServiceP23createFullscreenMessage7payload8listenerAA0D11Presentable_p7SwiftUI4View_p_AA0dE14NativeDelegate_pSgtF",
+            "mangledName": "$s11AEPServices9UIServiceP23createFullscreenMessage7payload8listenerAA0D11Presentable_p7SwiftUI4View_p_AA0dE14NativeDelegate_pSgtF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.UIService>",
+            "sugared_genericSig": "<Self where Self : AEPServices.UIService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createFullscreenMessage",
+            "printedName": "createFullscreenMessage(payload:listener:settings:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenPresentable",
+                "printedName": "any AEPServices.FullscreenPresentable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenPresentable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "View",
+                "printedName": "any SwiftUI.View",
+                "usr": "s:7SwiftUI4ViewP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any AEPServices.FullscreenMessageNativeDelegate)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FullscreenMessageNativeDelegate",
+                    "printedName": "any AEPServices.FullscreenMessageNativeDelegate",
+                    "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageSettings?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageSettings",
+                    "printedName": "AEPServices.MessageSettings",
+                    "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices9UIServiceP23createFullscreenMessage7payload8listener8settingsAA0D11Presentable_p7SwiftUI4View_p_AA0dE14NativeDelegate_pSgAA0E8SettingsCSgtF",
+            "mangledName": "$s11AEPServices9UIServiceP23createFullscreenMessage7payload8listener8settingsAA0D11Presentable_p7SwiftUI4View_p_AA0dE14NativeDelegate_pSgAA0E8SettingsCSgtF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.UIService>",
+            "sugared_genericSig": "<Self where Self : AEPServices.UIService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createFloatingButton",
+            "printedName": "createFloatingButton(listener:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FloatingButtonPresentable",
+                "printedName": "any AEPServices.FloatingButtonPresentable",
+                "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonPresentable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FloatingButtonDelegate",
+                "printedName": "any AEPServices.FloatingButtonDelegate",
+                "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices9UIServiceP20createFloatingButton8listenerAA0dE11Presentable_pAA0dE8Delegate_p_tF",
+            "mangledName": "$s11AEPServices9UIServiceP20createFloatingButton8listenerAA0dE11Presentable_pAA0dE8Delegate_p_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.UIService>",
+            "sugared_genericSig": "<Self where Self : AEPServices.UIService>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:11AEPServices9UIServiceP",
+        "mangledName": "$s11AEPServices9UIServiceP",
+        "moduleName": "AEPServices",
+        "intro_tvOS": "13.0",
+        "declAttributes": [
+          "Available",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FloatingButton",
+        "printedName": "FloatingButton",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "show",
+            "printedName": "show()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton(im)show",
+            "mangledName": "$s11AEPServices14FloatingButtonC4showyyF",
+            "moduleName": "AEPServices",
+            "objc_name": "show",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismiss",
+            "printedName": "dismiss()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton(im)dismiss",
+            "mangledName": "$s11AEPServices14FloatingButtonC7dismissyyF",
+            "moduleName": "AEPServices",
+            "objc_name": "dismiss",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setButtonImage",
+            "printedName": "setButtonImage(imageData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton(im)setButtonImageWithImageData:",
+            "mangledName": "$s11AEPServices14FloatingButtonC03setC5Image9imageDatay10Foundation0G0V_tF",
+            "moduleName": "AEPServices",
+            "objc_name": "setButtonImageWithImageData:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setInitial",
+            "printedName": "setInitial(position:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FloatingButtonPosition",
+                "printedName": "AEPServices.FloatingButtonPosition",
+                "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton(im)setInitialWithPosition:",
+            "mangledName": "$s11AEPServices14FloatingButtonC10setInitial8positionyAA0bC8PositionO_tF",
+            "moduleName": "AEPServices",
+            "objc_name": "setInitialWithPosition:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FloatingButton",
+                "printedName": "AEPServices.FloatingButton",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton(im)init",
+            "mangledName": "$s11AEPServices14FloatingButtonCACycfc",
+            "moduleName": "AEPServices",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AEPServices@objc(cs)AEPFloatingButton",
+        "mangledName": "$s11AEPServices14FloatingButtonC",
+        "moduleName": "AEPServices",
+        "objc_name": "AEPFloatingButton",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "FloatingButtonPresentable",
+            "printedName": "FloatingButtonPresentable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonPresentable",
+            "mangledName": "$s11AEPServices25FloatingButtonPresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Showable",
+            "printedName": "Showable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPShowable",
+            "mangledName": "$s11AEPServices8ShowableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Dismissible",
+            "printedName": "Dismissible",
+            "usr": "c:@M@AEPServices@objc(pl)AEPDismissible",
+            "mangledName": "$s11AEPServices11DismissibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FloatingButtonDelegate",
+        "printedName": "FloatingButtonDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onTapDetected",
+            "printedName": "onTapDetected()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonDelegate(im)onTapDetected",
+            "mangledName": "$s11AEPServices22FloatingButtonDelegateP13onTapDetectedyyF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FloatingButtonDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FloatingButtonDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onPanDetected",
+            "printedName": "onPanDetected()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonDelegate(im)onPanDetected",
+            "mangledName": "$s11AEPServices22FloatingButtonDelegateP13onPanDetectedyyF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FloatingButtonDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FloatingButtonDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onShow",
+            "printedName": "onShow()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonDelegate(im)onShowWithFloatingButton",
+            "mangledName": "$s11AEPServices22FloatingButtonDelegateP6onShowyyF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FloatingButtonDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FloatingButtonDelegate>",
+            "protocolReq": true,
+            "objc_name": "onShowWithFloatingButton",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onDismiss",
+            "printedName": "onDismiss()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonDelegate(im)onDismissWithFloatingButton",
+            "mangledName": "$s11AEPServices22FloatingButtonDelegateP9onDismissyyF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FloatingButtonDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FloatingButtonDelegate>",
+            "protocolReq": true,
+            "objc_name": "onDismissWithFloatingButton",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonDelegate",
+        "mangledName": "$s11AEPServices22FloatingButtonDelegateP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "objc_name": "AEPFloatingButtonDelegate",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FloatingButtonPosition",
+        "printedName": "FloatingButtonPosition",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "center",
+            "printedName": "center",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.FloatingButtonPosition.Type) -> AEPServices.FloatingButtonPosition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FloatingButtonPosition",
+                    "printedName": "AEPServices.FloatingButtonPosition",
+                    "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.FloatingButtonPosition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FloatingButtonPosition",
+                        "printedName": "AEPServices.FloatingButtonPosition",
+                        "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition@AEPFloatingButtonPositionCenter",
+            "mangledName": "$s11AEPServices22FloatingButtonPositionO6centeryA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "topRight",
+            "printedName": "topRight",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.FloatingButtonPosition.Type) -> AEPServices.FloatingButtonPosition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FloatingButtonPosition",
+                    "printedName": "AEPServices.FloatingButtonPosition",
+                    "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.FloatingButtonPosition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FloatingButtonPosition",
+                        "printedName": "AEPServices.FloatingButtonPosition",
+                        "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition@AEPFloatingButtonPositionTopRight",
+            "mangledName": "$s11AEPServices22FloatingButtonPositionO8topRightyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "topLeft",
+            "printedName": "topLeft",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AEPServices.FloatingButtonPosition.Type) -> AEPServices.FloatingButtonPosition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FloatingButtonPosition",
+                    "printedName": "AEPServices.FloatingButtonPosition",
+                    "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AEPServices.FloatingButtonPosition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FloatingButtonPosition",
+                        "printedName": "AEPServices.FloatingButtonPosition",
+                        "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition@AEPFloatingButtonPositionTopLeft",
+            "mangledName": "$s11AEPServices22FloatingButtonPositionO7topLeftyA2CmF",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.FloatingButtonPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FloatingButtonPosition",
+                    "printedName": "AEPServices.FloatingButtonPosition",
+                    "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:11AEPServices22FloatingButtonPositionO8rawValueACSgSi_tcfc",
+            "mangledName": "$s11AEPServices22FloatingButtonPositionO8rawValueACSgSi_tcfc",
+            "moduleName": "AEPServices",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11AEPServices22FloatingButtonPositionO8rawValueSivp",
+            "mangledName": "$s11AEPServices22FloatingButtonPositionO8rawValueSivp",
+            "moduleName": "AEPServices",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices22FloatingButtonPositionO8rawValueSivg",
+                "mangledName": "$s11AEPServices22FloatingButtonPositionO8rawValueSivg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition",
+        "mangledName": "$s11AEPServices22FloatingButtonPositionO",
+        "moduleName": "AEPServices",
+        "objc_name": "AEPFloatingButtonPosition",
+        "declAttributes": [
+          "ObjC",
+          "Available",
+          "Available"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FloatingButtonPresentable",
+        "printedName": "FloatingButtonPresentable",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "setButtonImage",
+            "printedName": "setButtonImage(imageData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonPresentable(im)setButtonImageWithImageData:",
+            "mangledName": "$s11AEPServices25FloatingButtonPresentableP03setC5Image9imageDatay10Foundation0H0V_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FloatingButtonPresentable>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FloatingButtonPresentable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setInitial",
+            "printedName": "setInitial(position:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FloatingButtonPosition",
+                "printedName": "AEPServices.FloatingButtonPosition",
+                "usr": "c:@M@AEPServices@E@AEPFloatingButtonPosition"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonPresentable(im)setInitialWithPosition:",
+            "mangledName": "$s11AEPServices25FloatingButtonPresentableP10setInitial8positionyAA0bC8PositionO_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FloatingButtonPresentable>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FloatingButtonPresentable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPFloatingButtonPresentable",
+        "mangledName": "$s11AEPServices25FloatingButtonPresentableP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AEPServices.Dismissible, τ_0_0 : AEPServices.Showable>",
+        "sugared_genericSig": "<Self : AEPServices.Dismissible, Self : AEPServices.Showable>",
+        "objc_name": "AEPFloatingButtonPresentable",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Dismissible",
+            "printedName": "Dismissible",
+            "usr": "c:@M@AEPServices@objc(pl)AEPDismissible",
+            "mangledName": "$s11AEPServices11DismissibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Showable",
+            "printedName": "Showable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPShowable",
+            "mangledName": "$s11AEPServices8ShowableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FullscreenMessageNative",
+        "printedName": "FullscreenMessageNative",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "settings",
+            "printedName": "settings",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AEPServices.MessageSettings?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MessageSettings",
+                    "printedName": "AEPServices.MessageSettings",
+                    "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(py)settings",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvp",
+            "moduleName": "AEPServices",
+            "declAttributes": [
+              "HasInitialValue",
+              "ObjC",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageSettings?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageSettings",
+                        "printedName": "AEPServices.MessageSettings",
+                        "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)settings",
+                "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvg",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AEPServices.MessageSettings?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MessageSettings",
+                        "printedName": "AEPServices.MessageSettings",
+                        "usr": "c:@M@AEPServices@objc(cs)AEPMessageSettings"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)setSettings:",
+                "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvs",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvM",
+                "mangledName": "$s11AEPServices23FullscreenMessageNativeC8settingsAA0C8SettingsCSgvM",
+                "moduleName": "AEPServices",
+                "implicit": true,
+                "intro_iOS": "13.0",
+                "intro_tvOS": "13.0",
+                "declAttributes": [
+                  "Available",
+                  "Available",
+                  "Available",
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hide",
+            "printedName": "hide()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices23FullscreenMessageNativeC4hideyyF",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC4hideyyF",
+            "moduleName": "AEPServices",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "show",
+            "printedName": "show()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)show",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC4showyyF",
+            "moduleName": "AEPServices",
+            "objc_name": "show",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "show",
+            "printedName": "show(withMessagingDelegateControl:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:11AEPServices23FullscreenMessageNativeC4show28withMessagingDelegateControlySb_tF",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC4show28withMessagingDelegateControlySb_tF",
+            "moduleName": "AEPServices",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismiss",
+            "printedName": "dismiss()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)dismiss",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeC7dismissyyF",
+            "moduleName": "AEPServices",
+            "objc_name": "dismiss",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative(im)init",
+            "mangledName": "$s11AEPServices23FullscreenMessageNativeCACycfc",
+            "moduleName": "AEPServices",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative",
+        "mangledName": "$s11AEPServices23FullscreenMessageNativeC",
+        "moduleName": "AEPServices",
+        "intro_iOS": "13.0",
+        "intro_tvOS": "13.0",
+        "objc_name": "AEPFullscreenMessageNative",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "FullscreenPresentable",
+            "printedName": "FullscreenPresentable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenPresentable",
+            "mangledName": "$s11AEPServices21FullscreenPresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Showable",
+            "printedName": "Showable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPShowable",
+            "mangledName": "$s11AEPServices8ShowableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Dismissible",
+            "printedName": "Dismissible",
+            "usr": "c:@M@AEPServices@objc(pl)AEPDismissible",
+            "mangledName": "$s11AEPServices11DismissibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FullscreenMessageNativeDelegate",
+        "printedName": "FullscreenMessageNativeDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "onShow",
+            "printedName": "onShow(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate(im)onShowFullscreenMessageNative:",
+            "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP6onShow7messageyAA0bcD0C_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FullscreenMessageNativeDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FullscreenMessageNativeDelegate>",
+            "protocolReq": true,
+            "objc_name": "onShowFullscreenMessageNative:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onDismiss",
+            "printedName": "onDismiss(message:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate(im)onDismissFullscreenMessageNative:",
+            "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP9onDismiss7messageyAA0bcD0C_tF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FullscreenMessageNativeDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FullscreenMessageNativeDelegate>",
+            "protocolReq": true,
+            "objc_name": "onDismissFullscreenMessageNative:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onError",
+            "printedName": "onError(message:error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FullscreenMessageNative",
+                "printedName": "AEPServices.FullscreenMessageNative",
+                "usr": "c:@M@AEPServices@objc(cs)AEPFullscreenMessageNative"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PresentationError",
+                "printedName": "AEPServices.PresentationError",
+                "usr": "c:@M@AEPServices@objc(cs)AEPPresentationError"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate(im)onErrorFullscreenMessageNative:error:",
+            "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP7onError7message5erroryAA0bcD0C_AA012PresentationG0CtF",
+            "moduleName": "AEPServices",
+            "genericSig": "<τ_0_0 where τ_0_0 : AEPServices.FullscreenMessageNativeDelegate>",
+            "sugared_genericSig": "<Self where Self : AEPServices.FullscreenMessageNativeDelegate>",
+            "protocolReq": true,
+            "objc_name": "onErrorFullscreenMessageNative:error:",
+            "declAttributes": [
+              "Optional",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenMessageNativeDelegate",
+        "mangledName": "$s11AEPServices31FullscreenMessageNativeDelegateP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "intro_iOS": "13.0",
+        "intro_tvOS": "13.0",
+        "objc_name": "AEPFullscreenMessageNativeDelegate",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "ObjC",
+          "Available",
+          "Available"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FullscreenPresentable",
+        "printedName": "FullscreenPresentable",
+        "declKind": "Protocol",
+        "usr": "c:@M@AEPServices@objc(pl)AEPFullscreenPresentable",
+        "mangledName": "$s11AEPServices21FullscreenPresentableP",
+        "moduleName": "AEPServices",
+        "genericSig": "<τ_0_0 : AEPServices.Dismissible, τ_0_0 : AEPServices.Showable>",
+        "sugared_genericSig": "<Self : AEPServices.Dismissible, Self : AEPServices.Showable>",
+        "objc_name": "AEPFullscreenPresentable",
+        "declAttributes": [
+          "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Dismissible",
+            "printedName": "Dismissible",
+            "usr": "c:@M@AEPServices@objc(pl)AEPDismissible",
+            "mangledName": "$s11AEPServices11DismissibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Showable",
+            "printedName": "Showable",
+            "usr": "c:@M@AEPServices@objc(pl)AEPShowable",
+            "mangledName": "$s11AEPServices8ShowableP"
           }
         ]
       },
