@@ -113,7 +113,51 @@ public class FullscreenMessageNative: NSObject, FullscreenPresentable {
             return
         }
 
-        let hostingController = UIHostingController(rootView: AnyView(payload))
+        // Apply MessageSettings where possible
+        let rootView: AnyView = {
+            var content: AnyView = AnyView(payload)
+
+            // Corner radius
+            if let radius = settings?.cornerRadius, radius > 0 {
+                content = AnyView(content.cornerRadius(radius))
+            }
+
+            // Insets (interpreted as raw points)
+            if let verticalInset = settings?.verticalInset {
+                content = AnyView(content.padding(.vertical, CGFloat(verticalInset)))
+            }
+            if let horizontalInset = settings?.horizontalInset {
+                content = AnyView(content.padding(.horizontal, CGFloat(horizontalInset)))
+            }
+
+            // Build backdrop color using
+            let uiColor = settings?.getBackgroundColor() ?? UIColor.black
+            let alpha = uiColor.cgColor.alpha
+
+            // Convert UIColor to SwiftUI Color without using iOS14 API
+            func color(from uic: UIColor) -> Color {
+                let comps = uic.cgColor.components ?? [1, 1, 1, 1]
+                let r = Double(comps[0])
+                let g = Double(comps.count >= 3 ? comps[1] : comps[0])
+                let b = Double(comps.count >= 3 ? comps[2] : comps[0])
+                let a = Double(alpha)
+                return Color(red: r, green: g, blue: b, opacity: a)
+            }
+
+            let swiftUIColor = color(from: uiColor)
+            let needsBackdrop = (settings?.uiTakeover == true) || (alpha > 0)
+
+            if needsBackdrop {
+                return AnyView(
+                    ZStack {
+                        swiftUIColor.edgesIgnoringSafeArea(.all)
+                        content
+                    })
+            }
+            return content
+        }()
+
+        let hostingController = UIHostingController(rootView: rootView)
         hostingController.modalPresentationStyle = .fullScreen
         hostingController.view.backgroundColor = .clear
 
