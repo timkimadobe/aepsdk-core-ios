@@ -374,6 +374,14 @@
 		4CB003FD2E32C8CB002152B0 /* TokenReplacementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB003FC2E32C8CB002152B0 /* TokenReplacementTests.swift */; };
 		4CB003FF2E32C8D2002152B0 /* TestableTraversable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB003FE2E32C8D2002152B0 /* TestableTraversable.swift */; };
 		4CCC21A62D9623BC00F75340 /* Event+EventHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC21A52D9623BC00F75340 /* Event+EventHistoryRequest.swift */; };
+		4CDB0DDA2EEA7949000B85D0 /* JSONPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DD82EEA7949000B85D0 /* JSONPath.swift */; };
+		4CDB0DDB2EEA7949000B85D0 /* ValidationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DD92EEA7949000B85D0 /* ValidationEngine.swift */; };
+		4CDB0DDC2EEA7949000B85D0 /* JSONAssertionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DD72EEA7949000B85D0 /* JSONAssertionBuilder.swift */; };
+		4CDB0DDD2EEA7949000B85D0 /* JSONPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DD82EEA7949000B85D0 /* JSONPath.swift */; };
+		4CDB0DDE2EEA7949000B85D0 /* ValidationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DD92EEA7949000B85D0 /* ValidationEngine.swift */; };
+		4CDB0DDF2EEA7949000B85D0 /* JSONAssertionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DD72EEA7949000B85D0 /* JSONAssertionBuilder.swift */; };
+		4CDB0DE22EEA79C8000B85D0 /* JSONValidationOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DE12EEA79C8000B85D0 /* JSONValidationOption.swift */; };
+		4CDB0DE32EEA79C8000B85D0 /* JSONValidationOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DE12EEA79C8000B85D0 /* JSONValidationOption.swift */; };
 		4CF0285D2C2CCBD3008ADE05 /* AnyCodable+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF028162C2CCA0F008ADE05 /* AnyCodable+Array.swift */; };
 		4CF0285E2C2CCBD3008ADE05 /* CountDownLatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0281D2C2CCA0F008ADE05 /* CountDownLatch.swift */; };
 		4CF0285F2C2CCBD3008ADE05 /* EventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF028182C2CCA0F008ADE05 /* EventSpec.swift */; };
@@ -1176,6 +1184,10 @@
 		4CB003FC2E32C8CB002152B0 /* TokenReplacementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReplacementTests.swift; sourceTree = "<group>"; };
 		4CB003FE2E32C8D2002152B0 /* TestableTraversable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableTraversable.swift; sourceTree = "<group>"; };
 		4CCC21A52D9623BC00F75340 /* Event+EventHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+EventHistoryRequest.swift"; sourceTree = "<group>"; };
+		4CDB0DD72EEA7949000B85D0 /* JSONAssertionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAssertionBuilder.swift; sourceTree = "<group>"; };
+		4CDB0DD82EEA7949000B85D0 /* JSONPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPath.swift; sourceTree = "<group>"; };
+		4CDB0DD92EEA7949000B85D0 /* ValidationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationEngine.swift; sourceTree = "<group>"; };
+		4CDB0DE12EEA79C8000B85D0 /* JSONValidationOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONValidationOption.swift; sourceTree = "<group>"; };
 		4CF028162C2CCA0F008ADE05 /* AnyCodable+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyCodable+Array.swift"; sourceTree = "<group>"; };
 		4CF028172C2CCA0F008ADE05 /* RealNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNetworkService.swift; sourceTree = "<group>"; };
 		4CF028182C2CCA0F008ADE05 /* EventSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSpec.swift; sourceTree = "<group>"; };
@@ -2329,9 +2341,23 @@
 			path = RulesEngineHistoricalTests;
 			sourceTree = "<group>";
 		};
+		4CDB0DE02EEA794E000B85D0 /* JSONComparison */ = {
+			isa = PBXGroup;
+			children = (
+				4CDB0DD72EEA7949000B85D0 /* JSONAssertionBuilder.swift */,
+				4CDB0DD82EEA7949000B85D0 /* JSONPath.swift */,
+				4CDB0DE12EEA79C8000B85D0 /* JSONValidationOption.swift */,
+				4CF028232C2CCA0F008ADE05 /* NodeConfig.swift */,
+				4CDB0DD92EEA7949000B85D0 /* ValidationEngine.swift */,
+				4CF028252C2CCA0F008ADE05 /* XCTestCase+AnyCodableAsserts.swift */,
+			);
+			path = JSONComparison;
+			sourceTree = "<group>";
+		};
 		75341CD72B9674870090CE3A /* PublicTestUtils */ = {
 			isa = PBXGroup;
 			children = (
+				4CDB0DE02EEA794E000B85D0 /* JSONComparison */,
 				4CF028162C2CCA0F008ADE05 /* AnyCodable+Array.swift */,
 				4CF0281D2C2CCA0F008ADE05 /* CountDownLatch.swift */,
 				4CF028182C2CCA0F008ADE05 /* EventSpec.swift */,
@@ -2344,14 +2370,12 @@
 				4CF0281A2C2CCA0F008ADE05 /* NamedCollectionDataStore+TestHelper.swift */,
 				4CF0281B2C2CCA0F008ADE05 /* NetworkRequest+DeepCopy.swift */,
 				4CF028292C2CCA10008ADE05 /* NetworkRequestHelper.swift */,
-				4CF028232C2CCA0F008ADE05 /* NodeConfig.swift */,
 				4CF028172C2CCA0F008ADE05 /* RealNetworkService.swift */,
 				4CF0281C2C2CCA0F008ADE05 /* TestableNetworkRequest.swift */,
 				4CF028242C2CCA0F008ADE05 /* TestConstants.swift */,
 				4CF028262C2CCA10008ADE05 /* TestUtils.swift */,
 				4CF0281E2C2CCA0F008ADE05 /* URL+TestHelper.swift */,
 				4CF0281F2C2CCA0F008ADE05 /* UserDefaults+TestHelper.swift */,
-				4CF028252C2CCA0F008ADE05 /* XCTestCase+AnyCodableAsserts.swift */,
 			);
 			path = PublicTestUtils;
 			sourceTree = "<group>";
@@ -3902,6 +3926,9 @@
 				4CF0286B2C2CCBD3008ADE05 /* TestableNetworkRequest.swift in Sources */,
 				4CF0286C2C2CCBD3008ADE05 /* TestConstants.swift in Sources */,
 				4CF0286D2C2CCBD3008ADE05 /* TestUtils.swift in Sources */,
+				4CDB0DDD2EEA7949000B85D0 /* JSONPath.swift in Sources */,
+				4CDB0DDE2EEA7949000B85D0 /* ValidationEngine.swift in Sources */,
+				4CDB0DDF2EEA7949000B85D0 /* JSONAssertionBuilder.swift in Sources */,
 				4CF0286E2C2CCBD3008ADE05 /* URL+TestHelper.swift in Sources */,
 				4CF0286F2C2CCBD3008ADE05 /* UserDefaults+TestHelper.swift in Sources */,
 				4CF028702C2CCBD3008ADE05 /* XCTestCase+AnyCodableAsserts.swift in Sources */,
@@ -3909,6 +3936,7 @@
 				4CF028722C2CCBD3008ADE05 /* MockFullscreenListener.swift in Sources */,
 				4CF028732C2CCBD3008ADE05 /* MockHitQueue.swift in Sources */,
 				4CF028742C2CCBD3008ADE05 /* MockLoggingService.swift in Sources */,
+				4CDB0DE22EEA79C8000B85D0 /* JSONValidationOption.swift in Sources */,
 				4CF028752C2CCBD3008ADE05 /* MockMessagingDelegate.swift in Sources */,
 				4CF028762C2CCBD3008ADE05 /* MockSystemInfoService.swift in Sources */,
 				4CF028772C2CCBD3008ADE05 /* MockTask.swift in Sources */,
@@ -4030,6 +4058,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF791992CAB5377003C1FD8 /* AnyCodable+Array.swift in Sources */,
+				4CDB0DE32EEA79C8000B85D0 /* JSONValidationOption.swift in Sources */,
 				4CF7918D2CAB517F003C1FD8 /* MockDiskCache.swift in Sources */,
 				4CF7918E2CAB517F003C1FD8 /* MockFullscreenListener.swift in Sources */,
 				4CF7918F2CAB517F003C1FD8 /* MockHitQueue.swift in Sources */,
@@ -4038,6 +4067,9 @@
 				4CF791922CAB517F003C1FD8 /* MockSystemInfoService.swift in Sources */,
 				4CF791932CAB517F003C1FD8 /* MockTask.swift in Sources */,
 				4CF791942CAB517F003C1FD8 /* MockUnzipper.swift in Sources */,
+				4CDB0DDA2EEA7949000B85D0 /* JSONPath.swift in Sources */,
+				4CDB0DDB2EEA7949000B85D0 /* ValidationEngine.swift in Sources */,
+				4CDB0DDC2EEA7949000B85D0 /* JSONAssertionBuilder.swift in Sources */,
 				4CF791952CAB517F003C1FD8 /* MockURLService.swift in Sources */,
 				4CF791962CAB517F003C1FD8 /* MockURLSession.swift in Sources */,
 				4CF791972CAB517F003C1FD8 /* MockUIService.swift in Sources */,
