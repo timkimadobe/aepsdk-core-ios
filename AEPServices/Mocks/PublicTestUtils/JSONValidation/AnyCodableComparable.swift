@@ -38,17 +38,20 @@ extension Optional: AnyCodableComparable where Wrapped: AnyCodableComparable {
 
 extension Dictionary: AnyCodableComparable where Key == String, Value: Any {
     public func toAnyCodable() -> AnyCodable? {
-        // Convert self to [String: Any?] - this is a no-op for [String: Any] and
-        // correctly wraps the value in an optional for [String: Any?]
-        let optionalValueDict = self.mapValues { $0 as Any? }
-        return AnyCodable(AnyCodable.from(dictionary: optionalValueDict))
+        // Use AnyCodable initializer directly to avoid unnecessary Optional wrapping
+        return AnyCodable(self)
     }
 }
 
 extension String: AnyCodableComparable {
     public func toAnyCodable() -> AnyCodable? {
-        guard let data = self.data(using: .utf8) else { return nil }
-        return try? JSONDecoder().decode(AnyCodable.self, from: data)
+        // Try to parse as JSON first
+        if let data = self.data(using: .utf8),
+           let anyCodable = try? JSONDecoder().decode(AnyCodable.self, from: data) {
+            return anyCodable
+        }
+        // Fallback to raw string
+        return AnyCodable(self)
     }
 }
 
