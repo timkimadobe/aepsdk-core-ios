@@ -387,6 +387,7 @@
 		4CDB0DEB2EEEA29D000B85D0 /* XCTestCase+JSONAsserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DEA2EEEA29D000B85D0 /* XCTestCase+JSONAsserts.swift */; };
 		4CDB0DEC2EEEA29D000B85D0 /* XCTestCase+JSONAsserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DEA2EEEA29D000B85D0 /* XCTestCase+JSONAsserts.swift */; };
 		4CDB0DEF2EEFCE1A000B85D0 /* AnyCodableComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DEE2EEFCE1A000B85D0 /* AnyCodableComparableTests.swift */; };
+		4CDB0DF12EEFDAFB000B85D0 /* JSONPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB0DF02EEFDAFB000B85D0 /* JSONPathTests.swift */; };
 		4CF0285D2C2CCBD3008ADE05 /* AnyCodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF028162C2CCA0F008ADE05 /* AnyCodable+Extensions.swift */; };
 		4CF0285E2C2CCBD3008ADE05 /* CountDownLatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF0281D2C2CCA0F008ADE05 /* CountDownLatch.swift */; };
 		4CF0285F2C2CCBD3008ADE05 /* EventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF028182C2CCA0F008ADE05 /* EventSpec.swift */; };
@@ -1194,6 +1195,7 @@
 		4CDB0DE72EEE9515000B85D0 /* AnyCodableComparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodableComparable.swift; sourceTree = "<group>"; };
 		4CDB0DEA2EEEA29D000B85D0 /* XCTestCase+JSONAsserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+JSONAsserts.swift"; sourceTree = "<group>"; };
 		4CDB0DEE2EEFCE1A000B85D0 /* AnyCodableComparableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodableComparableTests.swift; sourceTree = "<group>"; };
+		4CDB0DF02EEFDAFB000B85D0 /* JSONPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPathTests.swift; sourceTree = "<group>"; };
 		4CF028162C2CCA0F008ADE05 /* AnyCodable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AnyCodable+Extensions.swift"; sourceTree = "<group>"; };
 		4CF028172C2CCA0F008ADE05 /* RealNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNetworkService.swift; sourceTree = "<group>"; };
 		4CF028182C2CCA0F008ADE05 /* EventSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSpec.swift; sourceTree = "<group>"; };
@@ -2365,6 +2367,7 @@
 			isa = PBXGroup;
 			children = (
 				4CDB0DEE2EEFCE1A000B85D0 /* AnyCodableComparableTests.swift */,
+				4CDB0DF02EEFDAFB000B85D0 /* JSONPathTests.swift */,
 			);
 			path = JSONValidation;
 			sourceTree = "<group>";
@@ -3893,6 +3896,7 @@
 				3F03981C24BE61520019F095 /* SQLiteWrapperTests.swift in Sources */,
 				246FD08826CC52F200FD130B /* MessagingDelegateTests.swift in Sources */,
 				246FD08026CC520500FD130B /* MessageAlignmentTests.swift in Sources */,
+				4CDB0DF12EEFDAFB000B85D0 /* JSONPathTests.swift in Sources */,
 				92867D6525C0B56400E32CDC /* FloatingButtonTests.swift in Sources */,
 				75550A3F2A9930A500747BB7 /* NamedCollectionDataStoreFunctionalTests.swift in Sources */,
 				246FD08226CC521E00FD130B /* MessageAnimationTests.swift in Sources */,
