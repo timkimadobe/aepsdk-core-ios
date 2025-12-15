@@ -2375,10 +2375,10 @@
 			isa = PBXGroup;
 			children = (
 				4CDB0DEE2EEFCE1A000B85D0 /* AnyCodableComparableTests.swift */,
+				4CDB0DF62EEFE895000B85D0 /* JSONAssertionBuilderTests.swift */,
 				4CDB0DF02EEFDAFB000B85D0 /* JSONPathTests.swift */,
 				4CDB0DF22EEFE7A1000B85D0 /* NodeConfigTests.swift */,
 				4CDB0DF42EEFE831000B85D0 /* ValidationEngineTests.swift */,
-				4CDB0DF62EEFE895000B85D0 /* JSONAssertionBuilderTests.swift */,
 				4CDB0DF82EEFE938000B85D0 /* XCTestCase_JSONAssertsTests.swift */,
 			);
 			path = JSONValidation;
