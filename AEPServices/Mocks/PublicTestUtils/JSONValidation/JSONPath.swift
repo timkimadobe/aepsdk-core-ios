@@ -304,7 +304,15 @@ public struct JSONPath: Hashable {
                 bracketCount -= 1
                 componentBuilder.append("[")
                 if bracketCount == 0 {
-                    arrayComponents.insert(String(componentBuilder.reversed()), at: 0)
+                    let rawComponent = String(componentBuilder.reversed())
+                    
+                    // Validates that the array syntax is correct (integer or wildcard)
+                    // If invalid, this is a developer error in the path syntax -> fatalError
+                    if parseArrayIndex(from: rawComponent) == nil && rawComponent != "[*]" {
+                        fatalError("Invalid JSONPath array syntax: '\(rawComponent)' in segment '\(segment)'. Indices must be integers or '*'. To use literal brackets in a key, escape them: '\\[...\\].")
+                    }
+                    
+                    arrayComponents.insert(rawComponent, at: 0)
                     componentBuilder = ""
                     lastArrayAccessEnd = index
                 }
