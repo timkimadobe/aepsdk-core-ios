@@ -1,19 +1,17 @@
-//
-// Copyright 2025 Adobe. All rights reserved.
-// This file is licensed to you under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License. You may obtain a copy
-// of the License at http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software distributed under
-// the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-// OF ANY KIND, either express or implied. See the License for the specific language
-// governing permissions and limitations under the License.
-//
+/*
+ Copyright 2025 Adobe. All rights reserved.
+ This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License. You may obtain a copy
+ of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software distributed under
+ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ OF ANY KIND, either express or implied. See the License for the specific language
+ governing permissions and limitations under the License.
+*/
 
 import AEPServices
 import Foundation
-
-// MARK: - ValidationFailure
 
 /// Represents a single validation failure with details about what went wrong.
 public struct ValidationFailure: CustomStringConvertible {
@@ -180,6 +178,22 @@ enum ValidationEngine {
         keyPath: [Any],
         config: NodeConfig
     ) -> ValidationResult {
+        // Check for valueNotEqual constraint (inverse matching)
+        if config.isValueNotEqual {
+            if expected == actual {
+                return .failure(ValidationFailure(
+                    keyPath: keyPathAsString(keyPath),
+                    message: "Values must NOT be equal, but they are.",
+                    expected: "not \(String(describing: expected))",
+                    actual: String(describing: actual)
+                ))
+            } else {
+                // Values are different - this is what we want
+                return .success
+            }
+        }
+        
+        // Normal matching logic
         if config.isExactMatch {
             if expected == actual {
                 return .success

@@ -1,14 +1,14 @@
-//
-// Copyright 2023 Adobe. All rights reserved.
-// This file is licensed to you under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License. You may obtain a copy
-// of the License at http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software distributed under
-// the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
-// OF ANY KIND, either express or implied. See the License for the specific language
-// governing permissions and limitations under the License.
-//
+/*
+ Copyright 2023 Adobe. All rights reserved.
+ This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License. You may obtain a copy
+ of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software distributed under
+ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ OF ANY KIND, either express or implied. See the License for the specific language
+ governing permissions and limitations under the License.
+*/
 
 import Foundation
 
@@ -65,7 +65,19 @@ struct NodeConfig: Hashable {
     var children: [String: NodeConfig] = [:]
     
     /// The node configuration for wildcard children.
-    var wildcardChildren: NodeConfig?
+    /// Backed by an array to enable recursive value type (recursion via heap storage).
+    private var _wildcardChildren: [NodeConfig] = []
+    
+    var wildcardChildren: NodeConfig? {
+        get { _wildcardChildren.first }
+        set {
+            if let newValue = newValue {
+                _wildcardChildren = [newValue]
+            } else {
+                _wildcardChildren = []
+            }
+        }
+    }
     
     // MARK: - Resolved Accessors (for self)
     
@@ -267,7 +279,11 @@ struct NodeConfig: Hashable {
             if wildcardChildren == nil {
                 wildcardChildren = NodeConfig(name: childName, defaults: defaults)
             }
-            wildcardChildren?.navigate(to: remainingComponents, apply: apply)
+            
+            if var wildcard = wildcardChildren {
+                wildcard.navigate(to: remainingComponents, apply: apply)
+                wildcardChildren = wildcard
+            }
             
             // Also apply to all existing children
             for childKey in children.keys {
@@ -296,8 +312,11 @@ struct NodeConfig: Hashable {
     
     /// Propagates current defaults to all children.
     private mutating func propagateDefaultsToChildren() {
-        wildcardChildren?.defaults = defaults
-        wildcardChildren?.propagateDefaultsToChildren()
+        if var wildcard = wildcardChildren {
+            wildcard.defaults = defaults
+            wildcard.propagateDefaultsToChildren()
+            wildcardChildren = wildcard
+        }
         
         for childKey in children.keys {
             children[childKey]?.defaults = defaults
