@@ -12,8 +12,6 @@
 
 import Foundation
 
-// MARK: - NodeConfig
-
 /// A struct representing the configuration for a node in a tree structure.
 ///
 /// `NodeConfig` provides a way to set configuration options for nodes in a hierarchical tree structure.

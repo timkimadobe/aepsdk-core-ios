@@ -79,7 +79,7 @@ These methods are available on the builder returned by `assertJSON(...)`.
 
 ## 3. Migration Guide (Deprecated `MultiPathConfig` -> Fluent Builder)
 
-The old `pathOptions` array using `MultiPathConfig` structs has been removed. Use the chainable methods on `assertJSON` instead.
+The old `pathOptions` array using `MultiPathConfig` structs has been removed. Existing code using these types will fail to compile. Use the chainable methods on `assertJSON` instead.
 
 ### General Mapping Rules
 

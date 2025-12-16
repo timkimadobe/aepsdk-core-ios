@@ -453,7 +453,7 @@ public extension XCTestCase {
     /// ```
     ///
     /// - Parameters:
-    ///   - expected: The expected JSON value (can be String, Dictionary, AnyCodable, etc.)
+    ///   - expected: The expected JSON value (can be String, Dictionary, NetworkRequest, AnyCodable, etc.)
     ///   - actual: The actual JSON value to validate
     ///   - file: The file where the assertion is made
     ///   - line: The line where the assertion is made

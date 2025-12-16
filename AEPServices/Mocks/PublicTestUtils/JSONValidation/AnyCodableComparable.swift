@@ -13,8 +13,6 @@
 import AEPServices
 import Foundation
 
-// MARK: - AnyCodableComparable Protocol
-
 /// A protocol that enables conversion of conforming types into `AnyCodable` format.
 public protocol AnyCodableComparable {
     /// Converts the conforming type to an optional `AnyCodable` instance.
@@ -22,8 +20,6 @@ public protocol AnyCodableComparable {
     /// - Returns: An optional `AnyCodable` instance representing the conforming type, or `nil` if the conversion fails.
     func toAnyCodable() -> AnyCodable?
 }
-
-// MARK: - AnyCodableComparable Conformances
 
 extension Optional: AnyCodableComparable where Wrapped: AnyCodableComparable {
     public func toAnyCodable() -> AnyCodable? {
@@ -36,6 +32,7 @@ extension Optional: AnyCodableComparable where Wrapped: AnyCodableComparable {
     }
 }
 
+/// Enables direct comparison of `[String: Any]` dictionaries.
 extension Dictionary: AnyCodableComparable where Key == String, Value: Any {
     public func toAnyCodable() -> AnyCodable? {
         // Use AnyCodable initializer directly to avoid unnecessary Optional wrapping
@@ -43,6 +40,10 @@ extension Dictionary: AnyCodableComparable where Key == String, Value: Any {
     }
 }
 
+/// Enables comparison of Strings, with automatic JSON parsing.
+///
+/// If the string contains valid JSON, it is parsed into `AnyCodable` structure (Object/Array).
+/// Otherwise, it is treated as a raw string value.
 extension String: AnyCodableComparable {
     public func toAnyCodable() -> AnyCodable? {
         // Try to parse as JSON first
@@ -61,6 +62,9 @@ extension AnyCodable: AnyCodableComparable {
     }
 }
 
+/// Enables comparison of `NetworkRequest` objects by extracting their payload.
+///
+/// This implementation parses the `connectPayload` property as a dictionary.
 extension NetworkRequest: AnyCodableComparable {
     public func toAnyCodable() -> AnyCodable? {
         guard let payloadAsDictionary = try? JSONSerialization.jsonObject(with: self.connectPayload, options: []) as? [String: Any] else {
