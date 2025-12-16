@@ -1,182 +1,38 @@
-# JSONValidation Tool Guide
+# JSONValidation Tool (Maintenance Guide)
 
-This directory contains the `JSONValidation` tool used for flexible and powerful JSON assertion in unit tests.
+This directory contains the source code for the `JSONValidation` utility, a fluent JSON assertion library used throughout the Adobe Experience Platform (AEP) Mobile SDK test suite.
 
-## 1. Core Concepts & Usage
+## 1. Purpose
 
-The tool uses a fluent builder pattern to assert equality between expected and actual JSON values, with granular control over specific paths.
+This tool allows tests to compare JSON structures (String, Dictionary, AnyCodable) with granular control over:
+- Array ordering (`anyOrder`)
+- Type vs Value matching (`typeMatch` vs `exactMatch`)
+- Collection sizes (`equalCount`)
+- Element presence (`keyMustBeAbsent`)
 
-### Basic Usage
-```swift
-assertJSON(expected: expectedJSON, actual: actualJSON)
-    .anyOrder(at: "items[*]")         // Allow array elements in any order
-    .typeMatch(at: "metadata.date")   // Check type only (ignore value)
-    .exactMatch(at: "metadata.id")    // Enforce strict value equality
-    .validate()                       // Run assertions
-```
+## 2. Architecture
 
-### JSONPath Syntax
-Paths are strings specifying location within the JSON structure:
-- **Root**: `JSONPath.root` or omitted in some APIs.
-- **Properties**: `"user.name"`
-- **Array Indices**: `"items[0]"`
-- **Wildcards**:
-    - `"items[*]"`: All elements in the `items` array.
-    - `"config.*"`: All keys in the `config` object.
+- **`JSONAssertionBuilder.swift`**: The fluent API entry point. Stores configuration in `NodeConfig`.
+- **`ValidationEngine.swift`**: The core logic that traverses the JSON tree and applies rules from `NodeConfig`.
+- **`NodeConfig.swift`**: A tree structure that mirrors the JSON hierarchy, storing validation options for each node.
+- **`JSONPath.swift`**: A parser and representation for paths like `"items[0].name"`.
+- **`AnyCodableComparable.swift`**: Type erasure to allow comparing mixed types (String vs Int vs Bool).
 
-### Scope
-- **`.singleNode`**: Applies only to the specific node at the path.
-- **`.subtree`**: Applies to the node and all its descendants.
-  - Example: `.typeMatch(scope: .subtree)` on root relaxes validation for the entire JSON to check types only.
+## 3. Testing Changes
 
----
+This utility is part of the **AEPTestUtils** module.
 
-## 2. Builder Capabilities Reference
+### How to Run Tests
+To test changes to this tool, run the unit tests in `AEPServices/Tests/utility/JSONValidation/`.
 
-These methods are available on the builder returned by `assertJSON(...)`.
+### Adding New Features
+1.  **Modify `NodeConfig.swift`** to add storage for new options.
+2.  **Modify `JSONAssertionBuilder.swift`** to add fluent methods.
+3.  **Modify `ValidationEngine.swift`** to implement logic during traversal.
+4.  **Add Tests**: Create new test cases in `AEPServices/Tests/utility/JSONValidation/` verifying the new behavior.
+5.  **Update Documentation**: Update `Documentation/Testing/JSONValidation.md` if the change adds new capabilities or alters behavior.
 
-### Array Ordering
-| Method | Description |
-| :--- | :--- |
-| `.anyOrder(at: ...)` | **Relaxation**: Array elements at the path can be in any order. |
-| `.strictOrder(at: ...)` | **Restriction**: Array elements must be in the exact order (default behavior). Use to override a broader `.anyOrder` setting. |
+## 4. Documentation
 
-### Collection Counts
-| Method | Description |
-| :--- | :--- |
-| `.equalCount(at: ...)` | **Restriction**: Arrays/Objects must have the exact same number of elements as expected. (Default: actual can have extra elements). |
-| `.flexibleCount(at: ...)` | **Relaxation**: Actual arrays/objects can have more elements than expected (default behavior). |
-| `.elementCount(_ count: Int, at: ...)` | **Validation**: Enforce a specific element count at a path. |
-
-### Value Matching
-| Method | Description |
-| :--- | :--- |
-| `.exactMatch(at: ...)` | **Restriction**: Types and literal values must match (default behavior). |
-| `.typeMatch(at: ...)` | **Relaxation**: Only types must match; literal values can differ. Useful for timestamps, IDs, etc. |
-| `.valueNotEqual(at: ...)` | **Validation**: Fails if the values ARE equal. Useful for checking state changes. |
-
-### Structure
-| Method | Description |
-| :--- | :--- |
-| `.keyMustBeAbsent(at: ...)` | **Validation**: The specified path must NOT exist in the actual JSON. |
-
-### Terminal Operations
-| Method | Description |
-| :--- | :--- |
-| `.validate()` | Runs assertions and reports failures to XCTest. |
-| `.check() -> Bool` | Returns `true` if valid, `false` otherwise (no assertions). |
-| `.validateWithResult() -> ValidationResult` | Returns detailed result object. |
-
----
-
-## 3. Migration Guide (Deprecated `MultiPathConfig` -> Fluent Builder)
-
-The old `pathOptions` array using `MultiPathConfig` structs has been removed. Use the chainable methods on `assertJSON` instead.
-
-### General Mapping Rules
-
-| Old `MultiPathConfig` | New Builder Method |
-| --------------------- | ------------------ |
-| `AnyOrderMatch` | `.anyOrder(at: ...)` |
-| `CollectionEqualCount` | `.equalCount(at: ...)` |
-| `ElementCount` | `.elementCount(count, at: ...)` |
-| `KeyMustBeAbsent` | `.keyMustBeAbsent(at: ...)` |
-| `ValueNotEqual` | `.valueNotEqual(at: ...)` |
-| `ValueExactMatch` | `.exactMatch(at: ...)` |
-| `ValueTypeMatch` | `.typeMatch(at: ...)` |
-
-### 1:1 Migration Examples
-
-#### 1. Any Order Match
-**Old:**
-```swift
-assertExactMatch(expected: e, actual: a, pathOptions: [
-    AnyOrderMatch(paths: "items", "tags")
-])
-```
-**New:**
-```swift
-assertJSON(expected: e, actual: a)
-    .anyOrder(at: "items", "tags")
-    .validate()
-```
-
-#### 2. Collection Equal Count
-**Old:**
-```swift
-assertExactMatch(expected: e, actual: a, pathOptions: [
-    CollectionEqualCount(paths: "users")
-])
-```
-**New:**
-```swift
-assertJSON(expected: e, actual: a)
-    .equalCount(at: "users")
-    .validate()
-```
-
-#### 3. Element Count
-**Old:**
-```swift
-assertExactMatch(expected: e, actual: a, pathOptions: [
-    ElementCount(paths: "config", requiredCount: 5)
-])
-```
-**New:**
-```swift
-assertJSON(expected: e, actual: a)
-    .elementCount(5, at: "config")
-    .validate()
-```
-
-#### 4. Type Match Only (Ignore Literal Value)
-**Old:**
-```swift
-assertExactMatch(expected: e, actual: a, pathOptions: [
-    ValueTypeMatch(paths: "timestamp", "uuid")
-])
-```
-**New:**
-```swift
-assertJSON(expected: e, actual: a)
-    .typeMatch(at: "timestamp", "uuid")
-    .validate()
-```
-
-#### 5. Complex Combination
-**Old:**
-```swift
-assertExactMatch(expected: e, actual: a, pathOptions: [
-    AnyOrderMatch(paths: "events"),
-    ValueTypeMatch(paths: "events[*].timestamp"),
-    KeyMustBeAbsent(paths: "events[*].legacy_id")
-])
-```
-**New:**
-```swift
-assertJSON(expected: e, actual: a)
-    .anyOrder(at: "events")
-    .typeMatch(at: "events[*].timestamp")
-    .keyMustBeAbsent(at: "events[*].legacy_id")
-    .validate()
-```
-
----
-
-## 4. The JSONPath Paradigm
-
-### Root Reference
-- In the new API, omitting the path defaults to **Root**.
-- Example: `.anyOrder(at: .root)` is equivalent to passing `[]` (empty array).
-- `nil` paths in the old API represented root; `JSONPath.root` is the explicit new equivalent.
-
-### Wildcards (`*`)
-- Used to apply rules to all children of a node.
-- **Key difference**:
-    - `path: "items"` refers to the array *container* itself (e.g., used for `.equalCount`).
-    - `path: "items[*]"` refers to *every element inside* the array (e.g., used for `.typeMatch` on items).
-
-### Implicit vs. Explicit
-- The new builder defaults to **Exact Match** everywhere.
-- You only specify exceptions (e.g., "allow any order here", "allow different value here").
-- This "exception-based" configuration makes tests more readable by highlighting what is *special* about the validation.
+- **User Guide**: `Documentation/Testing/JSONValidation.md` (How to *use* the tool).
+- **Maintenance**: This file (How to *modify* the tool).
