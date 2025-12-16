@@ -14,6 +14,7 @@ assertJSON(expected: expectedJSON, actual: actualJSON)
     .exactMatch(at: "metadata.id")    // Enforce strict value equality
     .validate()                       // Run assertions
 ```
+> **Tip:** Place each builder method on a new line to improve readability and make it easier to scan the validation logic.
 
 ### Supported Input Types
 The `expected` and `actual` parameters accept any type conforming to `AnyCodableComparable`:
