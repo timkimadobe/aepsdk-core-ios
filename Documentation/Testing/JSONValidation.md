@@ -17,7 +17,7 @@ assertJSON(expected: expectedJSON, actual: actualJSON)
 > **Tip:** Place each builder method on a new line to improve readability and make it easier to scan the validation logic.
 
 ### Default Behavior
-Unless configured otherwise, `assertJSON` enforces strict validation:
+Unless configured otherwise, `assertJSON` enforces the following validation logic:
 1.  **Exact Value Matching**: Values must match exactly (type and literal value).
     *   *Migration Note*: Users of `assertTypeMatch` must explicitly add `.typeMatch(...)`.
 2.  **Strict Array Ordering**: Array elements must match in the given order.
