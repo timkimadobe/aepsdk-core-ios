@@ -143,7 +143,7 @@ struct NodeConfig: Hashable {
         resolved.children = childNode?.children ?? wildcardNode?.children ?? [:]
         resolved.wildcardChildren = childNode?.wildcardChildren ?? wildcardNode?.wildcardChildren
         
-        // Resolve each option using precedence: child → wildcard → defaults
+        // Resolve each option using precedence: child -> wildcard -> defaults
         // Note: Parent's specific options do NOT propagate (that's for .subtree/defaults).
         resolved.anyOrder = childNode?.anyOrder ?? wildcardNode?.anyOrder
         resolved.exactMatch = childNode?.exactMatch ?? wildcardNode?.exactMatch

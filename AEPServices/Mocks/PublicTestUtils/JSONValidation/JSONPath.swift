@@ -226,7 +226,7 @@ public struct JSONPath: Hashable {
     ///
     /// Handles escaped dots (`\.`) as part of the key name.
     ///
-    /// Example: `"key0\.key1.key2[1][2].key3"` → `["key0\.key1", "key2[1][2]", "key3"]`
+    /// Example: `"key0\.key1.key2[1][2].key3"` -> `["key0\.key1", "key2[1][2]", "key3"]`
     private static func parseObjectPathComponents(from path: String) -> [String] {
         if path.isEmpty { return [""] }
         
@@ -260,7 +260,7 @@ public struct JSONPath: Hashable {
     
     /// Extracts the string part and array access parts from a path segment.
     ///
-    /// Example: `"key1[0][1]"` → `(stringComponent: "key1", arrayComponents: ["[0]", "[1]"])`
+    /// Example: `"key1[0][1]"` -> `(stringComponent: "key1", arrayComponents: ["[0]", "[1]"])`
     private static func parseArrayPathComponents(from segment: String) -> (stringComponent: String?, arrayComponents: [String]) {
         if segment.isEmpty { return (stringComponent: "", arrayComponents: []) }
         
@@ -345,7 +345,7 @@ public struct JSONPath: Hashable {
     
     /// Extracts an array index from a bracket notation string.
     ///
-    /// Example: `"[42]"` → `42`
+    /// Example: `"[42]"` -> `42`
     private static func parseArrayIndex(from arrayAccess: String) -> Int? {
         guard arrayAccess.hasPrefix("[") && arrayAccess.hasSuffix("]") else {
             return nil
