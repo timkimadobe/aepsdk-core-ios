@@ -23,7 +23,7 @@ class XCTestCase_JSONAssertsTests: XCTestCase {
         let actual = ["key": "value", "extra": "data"]
         
         // Should pass (no failure raised)
-        assertValueSubset(expected: expected, actual: actual)
+        assertExactMatch(expected: expected, actual: actual)
     }
     
     func testAssertValueSubset_FailsForValueMismatch() {
@@ -31,7 +31,7 @@ class XCTestCase_JSONAssertsTests: XCTestCase {
         let actual = ["key": "wrong"]
         
         XCTExpectFailure("Values mismatch should cause failure") {
-            assertValueSubset(expected: expected, actual: actual)
+            assertExactMatch(expected: expected, actual: actual)
         }
     }
 
@@ -43,7 +43,7 @@ class XCTestCase_JSONAssertsTests: XCTestCase {
         
         // Should pass because values are different but types match
         // If this used exact match default, it would fail
-        assertTypeSubset(expected: expected, actual: actual)
+        assertTypeMatch(expected: expected, actual: actual)
     }
     
     func testAssertTypeSubset_PassesForStructureMatch() {
@@ -51,7 +51,7 @@ class XCTestCase_JSONAssertsTests: XCTestCase {
         let actual = ["list": [10, 20]]
         
         // Should pass: Array contains Ints
-        assertTypeSubset(expected: expected, actual: actual)
+        assertTypeMatch(expected: expected, actual: actual)
     }
     
     func testAssertTypeSubset_FailsForTypeMismatch() {
@@ -59,7 +59,7 @@ class XCTestCase_JSONAssertsTests: XCTestCase {
         let actual = ["id": "string"] // String
         
         XCTExpectFailure("Type mismatch should cause failure") {
-            assertTypeSubset(expected: expected, actual: actual)
+            assertTypeMatch(expected: expected, actual: actual)
         }
     }
 

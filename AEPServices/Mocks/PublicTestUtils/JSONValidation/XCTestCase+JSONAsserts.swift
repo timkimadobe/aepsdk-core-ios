@@ -57,7 +57,7 @@ public extension XCTestCase {
     ///   - file: The file from which the method is called, used for localized assertion failures.
     ///   - line: The line from which the method is called, used for localized assertion failures.
     @available(*, deprecated, message: "Use assertJSON(expected:actual:).typeMatch(scope: .subtree).validate() instead")
-    func assertTypeSubset(expected: AnyCodableComparable, actual: AnyCodableComparable?, file: StaticString = #file, line: UInt = #line) {
+    func assertTypeMatch(expected: AnyCodableComparable, actual: AnyCodableComparable?, file: StaticString = #file, line: UInt = #line) {
         assertJSON(expected: expected, actual: actual, file: file, line: line)
             .typeMatch(scope: .subtree)
             .validate()
@@ -74,7 +74,7 @@ public extension XCTestCase {
     ///   - file: The file from which the method is called, used for localized assertion failures.
     ///   - line: The line from which the method is called, used for localized assertion failures.
     @available(*, deprecated, message: "Use assertJSON(expected:actual:).validate() instead")
-    func assertValueSubset(expected: AnyCodableComparable, actual: AnyCodableComparable?, file: StaticString = #file, line: UInt = #line) {
+    func assertExactMatch(expected: AnyCodableComparable, actual: AnyCodableComparable?, file: StaticString = #file, line: UInt = #line) {
         // exactMatch is the default, so no additional options needed
         assertJSON(expected: expected, actual: actual, file: file, line: line)
             .validate()
