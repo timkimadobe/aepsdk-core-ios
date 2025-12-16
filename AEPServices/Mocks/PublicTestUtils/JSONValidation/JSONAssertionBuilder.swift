@@ -446,7 +446,7 @@ public extension XCTestCase {
     ///
     ///     assertJSON(expected: expected, actual: response)
     ///         .exactMatch(at: "status")
-    ///         .anyOrder(at: "items")
+    ///         .anyOrder(at: "items[*]")
     ///         .typeMatch(at: "items[*].id")
     ///         .validate()
     /// }

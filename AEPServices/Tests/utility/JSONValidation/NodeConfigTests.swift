@@ -51,6 +51,41 @@ class NodeConfigTests: XCTestCase {
         XCTAssertFalse(config.isAnyOrder)
     }
 
+    func testDefaultsInheritance_ResolvedDefaultsPreferChildOverWildcardOverParent() {
+        // Parent defaults
+        let parentDefaults = NodeConfig.Defaults(anyOrder: false, exactMatch: true)
+        var parent = NodeConfig(defaults: parentDefaults)
+
+        // Wildcard defaults (used when a child does not exist)
+        parent.wildcardChildren = NodeConfig(defaults: NodeConfig.Defaults(anyOrder: false, exactMatch: false))
+
+        // Child defaults (highest precedence when child exists)
+        parent.children["child"] = NodeConfig(name: "child", defaults: NodeConfig.Defaults(anyOrder: true, exactMatch: true))
+
+        let resolved = parent.resolvedChild(named: "child")
+        XCTAssertTrue(resolved.isExactMatch, "Resolved child should inherit exactMatch from the child defaults")
+        XCTAssertTrue(resolved.isAnyOrder, "Resolved child should inherit anyOrder from the child defaults")
+    }
+
+    func testDefaultsInheritance_ResolvedDefaultsFallBackToWildcardWhenChildMissing() {
+        let parentDefaults = NodeConfig.Defaults(anyOrder: false, exactMatch: true)
+        var parent = NodeConfig(defaults: parentDefaults)
+        parent.wildcardChildren = NodeConfig(defaults: NodeConfig.Defaults(anyOrder: true, exactMatch: false))
+
+        let resolved = parent.resolvedChild(named: "missingChild")
+        XCTAssertFalse(resolved.isExactMatch, "Resolved child should inherit exactMatch from wildcard defaults when child is missing")
+        XCTAssertTrue(resolved.isAnyOrder, "Resolved child should inherit anyOrder from wildcard defaults when child is missing")
+    }
+
+    func testDefaultsInheritance_ResolvedDefaultsFallBackToParentWhenNoChildOrWildcard() {
+        let parentDefaults = NodeConfig.Defaults(anyOrder: false, exactMatch: false)
+        let parent = NodeConfig(defaults: parentDefaults)
+
+        let resolved = parent.resolvedChild(named: "missingChild")
+        XCTAssertFalse(resolved.isExactMatch, "Resolved child should inherit exactMatch from parent defaults when no wildcard exists")
+        XCTAssertFalse(resolved.isAnyOrder, "Resolved child should inherit anyOrder from parent defaults when no wildcard exists")
+    }
+
     // MARK: - Navigation & Mutation Tests
 
     func testSetOption_CreatesPathAndSetsValue() {

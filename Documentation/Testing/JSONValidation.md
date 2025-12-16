@@ -16,7 +16,16 @@ assertJSON(expected: expectedJSON, actual: actualJSON)
 ```
 > **Tip:** Place each builder method on a new line to improve readability and make it easier to scan the validation logic.
 
+### Default Behavior
+Unless configured otherwise, `assertJSON` enforces strict validation:
+1.  **Exact Value Matching**: Values must match exactly (type and literal value).
+    *   *Migration Note*: Users of `assertTypeMatch` must explicitly add `.typeMatch(...)`.
+2.  **Strict Array Ordering**: Array elements must match in the given order.
+3.  **Extensible Collections**: `actual` can contain more keys/elements than `expected` (subset match).
+    *   To enforce exact counts, use `.equalCount(...)`.
+
 ### Supported Input Types
+
 The `expected` and `actual` parameters accept any type conforming to `AnyCodableComparable`:
 - **Strings**: Automatically parsed as JSON if possible; otherwise treated as raw strings.
 - **Dictionaries**: `[String: Any]` (Standard JSON objects).
@@ -50,6 +59,11 @@ These methods are available on the builder returned by `assertJSON(...)`.
 | `.anyOrder(at: ...)` | **Relaxation**: Array elements at the path can be in any order. |
 | `.strictOrder(at: ...)` | **Restriction**: Array elements must be in the exact order (default behavior). Use to override a broader `.anyOrder` setting. |
 
+> **Path Usage for Ordering**:
+> *   `"items[*]"`: Applies to **all elements** (e.g. all items unordered).
+> *   `"items[0]"`: Applies to a **specific element** (e.g. only first item unordered).
+> *   `"items"`: Applies to the **list container** (does NOT affect element ordering).
+
 ### Collection Counts
 | Method | Description |
 | :--- | :--- |
@@ -82,6 +96,19 @@ These methods are available on the builder returned by `assertJSON(...)`.
 
 The old `pathOptions` array using `MultiPathConfig` structs has been removed. Existing code using these types will fail to compile. Use the chainable methods on `assertJSON` instead.
 
+### Step 0: Remove Protocol Conformance
+If your test class conforms to `AnyCodableAsserts`, remove it. The new assertion methods are available directly as `XCTestCase` extensions.
+
+**Old:**
+```swift
+class MyTests: XCTestCase, AnyCodableAsserts { ... }
+```
+
+**New:**
+```swift
+class MyTests: XCTestCase { ... }
+```
+
 ### General Mapping Rules
 
 | Old `MultiPathConfig` | New Builder Method |
@@ -96,7 +123,31 @@ The old `pathOptions` array using `MultiPathConfig` structs has been removed. Ex
 
 ### 1:1 Migration Examples
 
-#### 1. Any Order Match
+#### 1. Exact Equality (assertEqual)
+**Old:**
+```swift
+assertEqual(expected: e, actual: a)
+```
+**New:**
+```swift
+assertJSON(expected: e, actual: a)
+    .equalCount(scope: .subtree)
+    .validate()
+```
+
+#### 2. Type Match Only (assertTypeMatch)
+**Old:**
+```swift
+assertTypeMatch(expected: e, actual: a)
+```
+**New:**
+```swift
+assertJSON(expected: e, actual: a)
+    .typeMatch(scope: .subtree)
+    .validate()
+```
+
+#### 3. Any Order Match
 **Old:**
 ```swift
 assertExactMatch(expected: e, actual: a, pathOptions: [
@@ -106,11 +157,12 @@ assertExactMatch(expected: e, actual: a, pathOptions: [
 **New:**
 ```swift
 assertJSON(expected: e, actual: a)
-    .anyOrder(at: "items", "tags")
+    .anyOrder(at: "items[*]", "tags[*]") // Entire arrays unordered
+    .anyOrder(at: "priority_list[0]")    // Only the first expected item is order-independent
     .validate()
 ```
 
-#### 2. Collection Equal Count
+#### 4. Collection Equal Count
 **Old:**
 ```swift
 assertExactMatch(expected: e, actual: a, pathOptions: [
@@ -124,7 +176,7 @@ assertJSON(expected: e, actual: a)
     .validate()
 ```
 
-#### 3. Element Count
+#### 5. Element Count
 **Old:**
 ```swift
 assertExactMatch(expected: e, actual: a, pathOptions: [
@@ -138,7 +190,7 @@ assertJSON(expected: e, actual: a)
     .validate()
 ```
 
-#### 4. Type Match Only (Ignore Literal Value)
+#### 6. Type Match Only (Ignore Literal Value)
 **Old:**
 ```swift
 assertExactMatch(expected: e, actual: a, pathOptions: [
@@ -152,7 +204,7 @@ assertJSON(expected: e, actual: a)
     .validate()
 ```
 
-#### 5. Complex Combination
+#### 7. Complex Combination
 **Old:**
 ```swift
 assertExactMatch(expected: e, actual: a, pathOptions: [
@@ -164,7 +216,7 @@ assertExactMatch(expected: e, actual: a, pathOptions: [
 **New:**
 ```swift
 assertJSON(expected: e, actual: a)
-    .anyOrder(at: "events")
+    .anyOrder(at: "events[*]")
     .typeMatch(at: "events[*].timestamp")
     .keyMustBeAbsent(at: "events[*].legacy_id")
     .validate()
@@ -176,17 +228,18 @@ assertJSON(expected: e, actual: a)
 
 ### Root Reference
 - In the new API, omitting the path defaults to **Root**.
-- Example: `.anyOrder(at: .root)` is equivalent to passing `[]` (empty array).
+- Example: `.anyOrder(at: "[*]")` applies to all elements in the root array.
 - `nil` paths in the old API represented root; `JSONPath.root` is the explicit new equivalent.
 
 ### Wildcards (`*`)
 - Used to apply rules to all children of a node.
 - **Key difference**:
     - `path: "items"` refers to the array *container* itself (e.g., used for `.equalCount`).
-    - `path: "items[*]"` refers to *every element inside* the array (e.g., used for `.typeMatch` on items).
+    - `path: "items[*]"` refers to *every element inside* the array (e.g., used for `.anyOrder` or `.typeMatch` on items).
+    - **Requirement**: Applying options to the container (e.g. `"items"`) does not affect element ordering.
+
 
 ### Implicit vs. Explicit
-- The new builder defaults to **Exact Match** everywhere.
 - You only specify exceptions (e.g., "allow any order here", "allow different value here").
 - This "exception-based" configuration makes tests more readable by highlighting what is *special* about the validation.
 

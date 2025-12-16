@@ -122,8 +122,7 @@ struct NodeConfig: Hashable {
     /// Returns a fully-resolved config for a child, considering the full precedence chain:
     /// 1. Child's specific settings (if child exists)
     /// 2. Parent's wildcard settings (if wildcard exists)
-    /// 3. Parent's node-specific settings
-    /// 4. Child's defaults (if child exists) or parent's defaults
+    /// 3. Child's defaults (if child exists) or parent's defaults
     ///
     /// This is the primary method for getting child configuration during validation.
     /// The returned config has all settings resolved - just use `isExactMatch`, `isAnyOrder`, etc.
@@ -137,43 +136,20 @@ struct NodeConfig: Hashable {
         // Start with a base config using the appropriate defaults
         var resolved = NodeConfig(
             name: name,
-            defaults: childNode?.defaults ?? defaults
+            defaults: childNode?.defaults ?? wildcardNode?.defaults ?? defaults
         )
         
         // Copy children structure from child or wildcard if they exist
         resolved.children = childNode?.children ?? wildcardNode?.children ?? [:]
         resolved.wildcardChildren = childNode?.wildcardChildren ?? wildcardNode?.wildcardChildren
         
-        // Resolve each option using precedence: child → wildcard → parent → defaults
-        resolved.anyOrder = resolveOption(
-            child: childNode?.anyOrder,
-            wildcard: wildcardNode?.anyOrder,
-            parent: anyOrder
-        )
-        
-        resolved.exactMatch = resolveOption(
-            child: childNode?.exactMatch,
-            wildcard: wildcardNode?.exactMatch,
-            parent: exactMatch
-        )
-        
-        resolved.equalCount = resolveOption(
-            child: childNode?.equalCount,
-            wildcard: wildcardNode?.equalCount,
-            parent: equalCount
-        )
-        
-        resolved.keyMustBeAbsent = resolveOption(
-            child: childNode?.keyMustBeAbsent,
-            wildcard: wildcardNode?.keyMustBeAbsent,
-            parent: keyMustBeAbsent
-        )
-        
-        resolved.valueNotEqual = resolveOption(
-            child: childNode?.valueNotEqual,
-            wildcard: wildcardNode?.valueNotEqual,
-            parent: valueNotEqual
-        )
+        // Resolve each option using precedence: child → wildcard → defaults
+        // Note: Parent's specific options do NOT propagate (that's for .subtree/defaults).
+        resolved.anyOrder = childNode?.anyOrder ?? wildcardNode?.anyOrder
+        resolved.exactMatch = childNode?.exactMatch ?? wildcardNode?.exactMatch
+        resolved.equalCount = childNode?.equalCount ?? wildcardNode?.equalCount
+        resolved.keyMustBeAbsent = childNode?.keyMustBeAbsent ?? wildcardNode?.keyMustBeAbsent
+        resolved.valueNotEqual = childNode?.valueNotEqual ?? wildcardNode?.valueNotEqual
         
         // Element count: only inherit from child or wildcard, not parent
         // (parent's element count shouldn't apply to children)
@@ -188,12 +164,6 @@ struct NodeConfig: Hashable {
             return NodeConfig(name: nil, defaults: defaults)
         }
         return resolvedChild(named: String(index))
-    }
-    
-    /// Resolves an option value using the precedence chain.
-    private func resolveOption(child: Bool?, wildcard: Bool?, parent: Bool?) -> Bool? {
-        // Return first non-nil value in precedence order
-        child ?? wildcard ?? parent
     }
     
     // MARK: - Option Setting Methods
