@@ -18,152 +18,211 @@ class ValidationEngineTests: XCTestCase {
 
     // MARK: - Primitive Tests
 
+    /// Exact match succeeds when expected and actual primitives are equal.
     func testValidate_Primitives_ExactMatch() {
+        // Given
         let config = NodeConfig(defaults: .init(exactMatch: true))
+
+        // When
         let result = ValidationEngine.validate(expected: AnyCodable("test"), actual: AnyCodable("test"), config: config)
+
+        // Then
         XCTAssertTrue(result.isValid)
     }
 
+    /// Exact match fails when expected and actual primitives differ.
     func testValidate_Primitives_Mismatch() {
+        // Given
         let config = NodeConfig(defaults: .init(exactMatch: true))
+
+        // When
         let result = ValidationEngine.validate(expected: AnyCodable("test"), actual: AnyCodable("fail"), config: config)
+
+        // Then
         XCTAssertFalse(result.isValid)
         XCTAssertEqual(result.failures.first?.message, "Values do not match.")
     }
 
+    /// Type match succeeds when primitives have the same type (even if values differ).
     func testValidate_Primitives_TypeMatch() {
-        // "test" (String) matches "other" (String) because exactMatch = false
+        // Given
         let config = NodeConfig(defaults: .init(exactMatch: false))
+
+        // When
         let result = ValidationEngine.validate(expected: AnyCodable("test"), actual: AnyCodable("other"), config: config)
+
+        // Then
         XCTAssertTrue(result.isValid)
     }
 
+    /// Type match fails when primitives have different types.
     func testValidate_Primitives_TypeMismatch() {
+        // Given
         let config = NodeConfig(defaults: .init(exactMatch: false))
+
+        // When
         let result = ValidationEngine.validate(expected: AnyCodable("test"), actual: AnyCodable(123), config: config)
+
+        // Then
         XCTAssertFalse(result.isValid)
         XCTAssertTrue(result.failures.first?.message.contains("types do not match") ?? false)
     }
 
     // MARK: - Dictionary Tests
 
+    /// By default, expected dictionaries are treated as a subset of actual (actual may contain extra keys).
     func testValidate_Dictionary_Subset() {
-        // Expected is subset of Actual -> Pass
+        // Given
         let expected = AnyCodable(["a": 1])
         let actual = AnyCodable(["a": 1, "b": 2])
-        
         let config = NodeConfig() // Defaults: extensible (equalCount: false)
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
         XCTAssertTrue(result.isValid)
     }
 
+    /// When `equalCount` is enabled, extra keys in actual cause validation to fail.
     func testValidate_Dictionary_EqualCount_Fail() {
-        // Expected is subset, but we require equal count -> Fail
+        // Given
         let expected = AnyCodable(["a": 1])
         let actual = AnyCodable(["a": 1, "b": 2])
-        
         var config = NodeConfig()
         config.equalCount = true
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
         XCTAssertFalse(result.isValid)
         XCTAssertTrue(result.failures.first?.message.contains("count does not match") ?? false)
     }
 
+    /// Missing keys in actual fail at the missing key's path.
     func testValidate_Dictionary_MissingKey() {
+        // Given
         let expected = AnyCodable(["a": 1, "c": 3])
         let actual = AnyCodable(["a": 1, "b": 2])
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: NodeConfig())
+
+        // Then
         XCTAssertFalse(result.isValid)
-        // Failure comes from "c" being nil in actual
-        XCTAssertTrue(result.failures.first?.message.contains("Actual JSON is nil") ?? false)
+        XCTAssertTrue(result.failures.contains { $0.keyPath == "c" })
+        XCTAssertTrue(result.failures.contains { $0.message.contains("Actual JSON is nil") })
     }
 
     // MARK: - Array Tests
 
+    /// By default, expected arrays are treated as a prefix of actual (actual may contain extra elements).
     func testValidate_Array_Ordered_Pass() {
+        // Given
         let expected = AnyCodable([1, 2])
         let actual = AnyCodable([1, 2, 3]) // Extensible by default
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: NodeConfig())
+
+        // Then
         XCTAssertTrue(result.isValid)
     }
 
+    /// Without `anyOrder`, arrays are compared positionally.
     func testValidate_Array_Ordered_FailOrder() {
+        // Given
         let expected = AnyCodable([1, 2])
         let actual = AnyCodable([2, 1])
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: NodeConfig())
+
+        // Then
         XCTAssertFalse(result.isValid)
     }
 
+    /// With `anyOrder`, expected elements can match any position in actual.
     func testValidate_Array_AnyOrder_Pass() {
+        // Given
         let expected = AnyCodable([1, 2])
         let actual = AnyCodable([2, 1, 3])
-        
         var config = NodeConfig()
         config.anyOrder = true
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
         XCTAssertTrue(result.isValid)
     }
 
+    /// With `anyOrder`, validation fails if an expected element cannot be matched.
     func testValidate_Array_AnyOrder_FailMissing() {
+        // Given
         let expected = AnyCodable([1, 2, 99])
         let actual = AnyCodable([2, 1, 3])
-        
         var config = NodeConfig()
         config.anyOrder = true
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
         XCTAssertFalse(result.isValid)
-        // 99 not found
         XCTAssertTrue(result.failures.first?.message.contains("found no matches") ?? false)
     }
 
+    /// `anyOrder` can be enabled per-index to mix fixed and flexible element matching.
     func testValidate_Array_MixedOrder() {
-        // [0] is fixed (must be 1)
-        // [1] is anyOrder (must find 2 somewhere)
+        // Given
         let expected = AnyCodable([1, 2])
         let actual = AnyCodable([1, 99, 2])
-        
+
         var config = NodeConfig()
-        // Default is strict order.
-        // Set anyOrder ONLY for index 1
         var index1 = NodeConfig(name: "1")
         index1.anyOrder = true
         config.children["1"] = index1
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
         XCTAssertTrue(result.isValid)
     }
 
     // MARK: - Special Constraints
 
+    /// `keyMustBeAbsent` fails when the configured key exists in the actual JSON.
     func testValidate_KeyMustBeAbsent() {
+        // Given
         let actual = AnyCodable(["a": 1, "b": 2])
-        
         var config = NodeConfig()
         var nodeB = NodeConfig(name: "b")
         nodeB.keyMustBeAbsent = true
         config.children["b"] = nodeB
-        
-        // Expected is irrelevant for this constraint usually, but we pass nil or empty
+
+        // When
         let result = ValidationEngine.validate(expected: nil, actual: actual, config: config)
+
+        // Then
         XCTAssertFalse(result.isValid)
         XCTAssertTrue(result.failures.first?.message.contains("must not have key") ?? false)
     }
 
+    /// `valueNotEqual` fails when expected and actual are equal.
     func testValidate_ValueNotEqual() {
+        // Given
         let expected = AnyCodable("oldValue")
         let actual = AnyCodable("oldValue")
-        
         var config = NodeConfig()
         config.valueNotEqual = true
-        
+
+        // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
         XCTAssertFalse(result.isValid)
         XCTAssertTrue(result.failures.first?.message.contains("Values must NOT be equal") ?? false)
     }
