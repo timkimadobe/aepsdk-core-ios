@@ -16,6 +16,23 @@ assertJSON(expected: expectedJSON, actual: actualJSON)
 ```
 > **Tip:** Place each builder method on a new line to improve readability and make it easier to scan the validation logic.
 
+### Coding Conventions & Style
+- **Keep chains readable**: Put each builder method on its own line.
+- **Prefer root shorthand**: When applying an option at the root, omit `at:` (variadic overloads allow “no paths”).
+- **Prefer exception-based configuration**: Configure only what’s special (e.g., “allow any order here”, “type match this field”) and rely on defaults elsewhere.
+
+```swift
+assertJSON(expected: e, actual: a)
+    .equalCount(scope: .subtree)   // Root + all descendants
+    .validate()
+```
+
+```swift
+assertJSON(expected: e, actual: a)
+    .equalCount(at: "users")       // Only `users` collection count is strict
+    .validate()
+```
+
 ### Default Behavior
 Unless configured otherwise, `assertJSON` enforces the following validation logic:
 1.  **Exact Value Matching**: Values must match exactly (type and literal value).
@@ -227,7 +244,7 @@ assertJSON(expected: e, actual: a)
 ## 4. The JSONPath Paradigm
 
 ### Root Reference
-- In the new API, omitting the path defaults to **Root**.
+- Root can be expressed by **omitting the `at:` paths** in variadic overloads (e.g. `.typeMatch(scope: .subtree)`).
 - Example: `.anyOrder(at: "[*]")` applies to all elements in the root array.
 - `nil` paths in the old API represented root; `JSONPath.root` is the explicit new equivalent.
 
@@ -237,9 +254,3 @@ assertJSON(expected: e, actual: a)
     - `path: "items"` refers to the array *container* itself (e.g., used for `.equalCount`).
     - `path: "items[*]"` refers to *every element inside* the array (e.g., used for `.anyOrder` or `.typeMatch` on items).
     - **Requirement**: Applying options to the container (e.g. `"items"`) does not affect element ordering.
-
-
-### Implicit vs. Explicit
-- You only specify exceptions (e.g., "allow any order here", "allow different value here").
-- This "exception-based" configuration makes tests more readable by highlighting what is *special* about the validation.
-
