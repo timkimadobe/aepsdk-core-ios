@@ -100,7 +100,7 @@ commands:
     steps:
       - macos/preboot-simulator:
           platform: "iOS"
-          device: "iPhone 15"
+          device: "iPhone 16"
           version: "17.5"
 
   prestart_tvos_simulator:
