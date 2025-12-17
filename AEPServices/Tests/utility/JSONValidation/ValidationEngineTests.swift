@@ -70,6 +70,57 @@ class ValidationEngineTests: XCTestCase {
 
     // MARK: - Dictionary Tests
 
+    /// Dictionary input works when both sides are represented as `[String: Any?]`.
+    func testValidate_Dictionary_Input_StringAnyOptional() {
+        // Given
+        let expectedDict: [String: Any?] = ["a": 1, "b": nil]
+        let actualDict: [String: Any?] = ["a": 1, "b": nil, "extra": 123]
+
+        // When
+        let result = ValidationEngine.validate(
+            expected: AnyCodable(expectedDict),
+            actual: AnyCodable(actualDict),
+            config: NodeConfig()
+        )
+
+        // Then
+        XCTAssertTrue(result.isValid)
+    }
+
+    /// Dictionary input works when both sides are represented as `[String: AnyCodable]`.
+    func testValidate_Dictionary_Input_StringAnyCodable() {
+        // Given
+        let expectedDict: [String: AnyCodable] = ["a": AnyCodable(1), "b": AnyCodable(nil)]
+        let actualDict: [String: AnyCodable] = ["a": AnyCodable(1), "b": AnyCodable(nil), "extra": AnyCodable(123)]
+
+        // When
+        let result = ValidationEngine.validate(
+            expected: AnyCodable(expectedDict),
+            actual: AnyCodable(actualDict),
+            config: NodeConfig()
+        )
+
+        // Then
+        XCTAssertTrue(result.isValid)
+    }
+
+    /// Dictionary input works when expected/actual dictionary representations differ (`[String: Any?]` vs `[String: AnyCodable]`).
+    func testValidate_Dictionary_Input_MismatchedRepresentations_Passes() {
+        // Given
+        let expectedDict: [String: Any?] = ["a": 1]
+        let actualDict: [String: AnyCodable] = ["a": AnyCodable(1)]
+
+        // When
+        let result = ValidationEngine.validate(
+            expected: AnyCodable(expectedDict),
+            actual: AnyCodable(actualDict),
+            config: NodeConfig()
+        )
+
+        // Then
+        XCTAssertTrue(result.isValid)
+    }
+
     /// By default, expected dictionaries are treated as a subset of actual (actual may contain extra keys).
     func testValidate_Dictionary_Subset() {
         // Given
@@ -116,6 +167,57 @@ class ValidationEngineTests: XCTestCase {
     }
 
     // MARK: - Array Tests
+
+    /// Array input works when both sides are represented as `[Any?]`.
+    func testValidate_Array_Input_AnyOptional() {
+        // Given
+        let expectedArray: [Any?] = [1, nil, "a"]
+        let actualArray: [Any?] = [1, nil, "a", "extra"]
+
+        // When
+        let result = ValidationEngine.validate(
+            expected: AnyCodable(expectedArray),
+            actual: AnyCodable(actualArray),
+            config: NodeConfig()
+        )
+
+        // Then
+        XCTAssertTrue(result.isValid)
+    }
+
+    /// Array input works when both sides are represented as `[AnyCodable]`.
+    func testValidate_Array_Input_AnyCodable() {
+        // Given
+        let expectedArray: [AnyCodable] = [AnyCodable(1), AnyCodable(nil), AnyCodable("a")]
+        let actualArray: [AnyCodable] = [AnyCodable(1), AnyCodable(nil), AnyCodable("a"), AnyCodable("extra")]
+
+        // When
+        let result = ValidationEngine.validate(
+            expected: AnyCodable(expectedArray),
+            actual: AnyCodable(actualArray),
+            config: NodeConfig()
+        )
+
+        // Then
+        XCTAssertTrue(result.isValid)
+    }
+
+    /// Array input works when expected/actual array representations differ (`[Any?]` vs `[AnyCodable]`).
+    func testValidate_Array_Input_MismatchedRepresentations_Passes() {
+        // Given
+        let expectedArray: [Any?] = [1]
+        let actualArray: [AnyCodable] = [AnyCodable(1)]
+
+        // When
+        let result = ValidationEngine.validate(
+            expected: AnyCodable(expectedArray),
+            actual: AnyCodable(actualArray),
+            config: NodeConfig()
+        )
+
+        // Then
+        XCTAssertTrue(result.isValid)
+    }
 
     /// By default, expected arrays are treated as a prefix of actual (actual may contain extra elements).
     func testValidate_Array_Ordered_Pass() {
