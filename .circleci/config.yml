@@ -101,14 +101,14 @@ commands:
       - macos/preboot-simulator:
           platform: "iOS"
           device: "iPhone 16"
-          version: "17.5"
+          version: "18.5"
 
   prestart_tvos_simulator:
     steps:
       - macos/preboot-simulator:
           platform: "tvOS"
           device: "Apple TV"
-          version: "17.5"
+          version: "18.5"
       
   parse_and_upload_coverage:
     description: "Convert .xcresult → Cobertura XML and upload to Codecov"
