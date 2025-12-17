@@ -143,13 +143,29 @@ class ValidationEngineTests: XCTestCase {
         XCTAssertFalse(result.isValid)
     }
 
+    /// Setting `anyOrder` on the parent node does not propagate to child indices.
+    func testValidate_Array_AnyOrder_OnParent_DoesNotAffectElements() {
+        // Given
+        let expected = AnyCodable([1, 2])
+        let actual = AnyCodable([2, 1])
+        var config = NodeConfig()
+        config.anyOrder = true
+
+        // When
+        let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
+
+        // Then
+        XCTAssertFalse(result.isValid)
+        XCTAssertTrue(result.failures.contains { $0.keyPath == "[0]" && $0.message == "Values do not match." })
+        XCTAssertFalse(result.failures.contains { $0.message.contains("Any order") })
+    }
+
     /// With `anyOrder`, expected elements can match any position in actual.
     func testValidate_Array_AnyOrder_Pass() {
         // Given
         let expected = AnyCodable([1, 2])
         let actual = AnyCodable([2, 1, 3])
-        var config = NodeConfig()
-        config.anyOrder = true
+        let config = NodeConfig(defaults: .init(anyOrder: true))
 
         // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
@@ -163,15 +179,14 @@ class ValidationEngineTests: XCTestCase {
         // Given
         let expected = AnyCodable([1, 2, 99])
         let actual = AnyCodable([2, 1, 3])
-        var config = NodeConfig()
-        config.anyOrder = true
+        let config = NodeConfig(defaults: .init(anyOrder: true))
 
         // When
         let result = ValidationEngine.validate(expected: expected, actual: actual, config: config)
 
         // Then
         XCTAssertFalse(result.isValid)
-        XCTAssertTrue(result.failures.first?.message.contains("found no matches") ?? false)
+        XCTAssertTrue(result.failures.contains { $0.message.contains("found no matches") })
     }
 
     /// `anyOrder` can be enabled per-index to mix fixed and flexible element matching.
