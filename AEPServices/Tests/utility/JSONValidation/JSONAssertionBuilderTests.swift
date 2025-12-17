@@ -35,6 +35,68 @@ class JSONAssertionBuilderTests: XCTestCase {
             .anyOrder(at: "items[*]")
         XCTAssertTrue(looseBuilder.check())
     }
+
+    // MARK: - Modifier Ordering (Last Call Wins)
+
+    /// When multiple modifiers set conflicting options for the same path, the last modifier wins.
+    func testBuilder_ModifierOrder_LastCallWins_ValueMatching() {
+        // Given
+        let expected = AnyCodable(["id": 1])
+        let actual = AnyCodable(["id": 2])
+
+        // When / Then
+        // When: relax matching to type-only, then re-tighten to exact at the same path.
+        let exactWins = JSONAssertionBuilder(expected: expected, actual: actual, file: #file, line: #line)
+            .typeMatch(at: "id")
+            .exactMatch(at: "id")
+        XCTAssertFalse(exactWins.check(), "Last call should win; exactMatch should make this fail")
+
+        // When: tighten to exact, then relax to type-only at the same path.
+        let typeWins = JSONAssertionBuilder(expected: expected, actual: actual, file: #file, line: #line)
+            .exactMatch(at: "id")
+            .typeMatch(at: "id")
+        XCTAssertTrue(typeWins.check(), "Last call should win; typeMatch should make this pass")
+    }
+
+    /// When multiple modifiers set conflicting count rules for the same collection, the last modifier wins.
+    func testBuilder_ModifierOrder_LastCallWins_CountRules() {
+        // Given
+        let expected = AnyCodable(["items": [1]])
+        let actual = AnyCodable(["items": [1, 2]])
+
+        // When / Then
+        // When: enforce equalCount, then relax back to flexibleCount for the same path.
+        let flexibleWins = JSONAssertionBuilder(expected: expected, actual: actual, file: #file, line: #line)
+            .equalCount(at: "items")
+            .flexibleCount(at: "items")
+        XCTAssertTrue(flexibleWins.check(), "Last call should win; flexibleCount should allow extra elements")
+
+        // When: relax to flexibleCount, then re-tighten to equalCount for the same path.
+        let equalWins = JSONAssertionBuilder(expected: expected, actual: actual, file: #file, line: #line)
+            .flexibleCount(at: "items")
+            .equalCount(at: "items")
+        XCTAssertFalse(equalWins.check(), "Last call should win; equalCount should reject extra elements")
+    }
+
+    /// When multiple modifiers set conflicting ordering rules for the same array elements, the last modifier wins.
+    func testBuilder_ModifierOrder_LastCallWins_ArrayOrdering() {
+        // Given
+        let expected = AnyCodable(["items": [1, 2]])
+        let actual = AnyCodable(["items": [2, 1]])
+
+        // When / Then
+        // When: allow anyOrder at the element level, then override back to strict ordering.
+        let strictWins = JSONAssertionBuilder(expected: expected, actual: actual, file: #file, line: #line)
+            .anyOrder(at: "items[*]")
+            .strictOrder(at: "items[*]")
+        XCTAssertFalse(strictWins.check(), "Last call should win; strictOrder should make this fail")
+
+        // When: enforce strict ordering, then relax to anyOrder.
+        let anyOrderWins = JSONAssertionBuilder(expected: expected, actual: actual, file: #file, line: #line)
+            .strictOrder(at: "items[*]")
+            .anyOrder(at: "items[*]")
+        XCTAssertTrue(anyOrderWins.check(), "Last call should win; anyOrder should allow reordering")
+    }
     
     // MARK: - AnyOrder Propagation Behavior
 
